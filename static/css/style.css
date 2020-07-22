@@ -12,3 +12,12 @@
 	min-height: 603px;
 	padding-bottom: 10px;
 }
+
+/* On landscape oriented viewports the background image takes up the whole screen,
+the modules underneath should be visible so the view is not forced as big as portrait oriented
+viewports */
+@media screen and (orientation: landscape) {
+  .main-page-background {
+      min-height: 300px;
+  }
+}
