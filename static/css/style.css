@@ -1,0 +1,5 @@
+.backgroundTextureBody {
+    background-image: url("../images/generalbackgroundtexture.jpg");
+    background-repeat: repeat-y
+    background-size: cover;
+}
