@@ -22,7 +22,8 @@ def welcome():
 
 @app.route('/get_npcs')
 def get_npcs():
-    return render_template("npcs.html", npcs=mongo.db.NPC.find())
+    return render_template("npcs.html",
+        npcs=mongo.db.NPC.find().sort('name', 1))
 
 
 @app.route('/npc_overview/<npc_id>')
