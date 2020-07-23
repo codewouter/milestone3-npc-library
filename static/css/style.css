@@ -17,6 +17,16 @@
     margin: 0em 5em;
 }
 
+.variableFormContainer {
+    width: 100%;
+    margin: auto;
+}
+
+.input-field {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 /* mediaqueries necessary to prevent hero image from feeling the whole viewport, the content underneath should be partly visible so the user is aware of it. On the other hand on very wide viewports the hero image cann have a bit more height */
 @media screen and (orientation: landscape) and (max-width: 768px) {
   .heroImage {
@@ -28,4 +38,10 @@
   .heroImage {
       min-height: 450px;
   }
+}
+
+@media screen and (min-width: 992px) {
+    .variableFormContainer {
+        width: 60%;
+    }
 }
