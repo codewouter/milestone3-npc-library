@@ -1,9 +1,34 @@
+/* ----------- general classes ----------- */
+/* adds texture image to all page through body tag */
 .backgroundTextureBody {
     background-image: url("../images/generalbackgroundtexture.jpg");
     background-repeat: repeat-y;
     background-size: cover;
 }
 
+/* resizes the materialize button because it was to big, espcially for phones */
+.btn_small {
+    height: 20px;
+    width: 50px;
+    line-height: 20px;
+    margin: 5px 5px;
+    padding: 0 0.5em;
+}
+
+/* Used to reduce with of forms and lists on wide viewscreens, see media query section */
+.variableFormContainer {
+    width: 100%;
+    margin: auto;
+}
+
+/* reduces the materialize margins on various input fields */
+.input-field {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* ----------- welcome/landing page classes ----------- */
+/* positions and aligns hero image */
 .heroImage {
 	background-image: url("../images/background.jpg");
 	background-position: center;
@@ -13,29 +38,9 @@
 	padding-bottom: 10px;
 }
 
-.welcomeText {
-    margin: 0em 5em;
-}
-
-.btn_small {
-    height: 20px;
-    width: 50px;
-    line-height: 20px;
-    margin: 5px 5px;
-    padding: 0 0.5em;
-}
-
-.variableFormContainer {
-    width: 100%;
-    margin: auto;
-}
-
-.input-field {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-/* mediaqueries necessary to prevent hero image from feeling the whole viewport, the content underneath should be partly visible so the user is aware of it. On the other hand on very wide viewports the hero image cann have a bit more height */
+/* ----------- Media queries ----------- */
+/* mediaqueries necessary to prevent hero image from filing the whole viewport (vertically), the content underneath should
+ be partly visible so the user is aware of it. On the other hand on very wide viewports the hero image should have a bit more height */
 @media screen and (orientation: landscape) and (max-width: 768px) {
   .heroImage {
       min-height: 150px;
@@ -48,6 +53,7 @@
   }
 }
 
+/* used to reduce the width of forms and lists on wide viewports */
 @media screen and (min-width: 992px) {
     .variableFormContainer {
         width: 60%;
