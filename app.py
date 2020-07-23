@@ -13,12 +13,13 @@ app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 @app.route('/welcome')
 def welcome():
     return render_template("welcome.html")
 
-    
+
 @app.route('/get_npcs')
 def get_npcs():
     return render_template("npcs.html", npcs=mongo.db.NPC.find())
@@ -28,3 +29,4 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
+            

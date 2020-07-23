@@ -1,17 +1,25 @@
 
 {% extends 'base.html' %}
 {% block content %}
-{% for npc in npcs %}
-    {{ npc.name }}
-    {{ npc.race }}
-    {{ npc.class }}
-    {{ npc.level }}
-    {{ npc.strength }}
-    {{ npc.dexterity }}
-    {{ npc.constitution }}
-    {{ npc.intelligence }}
-    {{ npc.wisdom }}
-    {{ npc.charisma }}
-    {{ npc.description }}           
-{% endfor %}
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Level</th>
+            <th>Race</th>
+            <th>Class</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for npc in npcs %}
+        <tr>
+            <td>{{ npc.name }}</td>
+            <td>{{ npc.level }}</td>
+            <td>{{ npc.race }}</td>
+            <td>{{ npc.class }}</td>   
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
