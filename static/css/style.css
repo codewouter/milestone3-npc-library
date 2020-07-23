@@ -1,15 +1,15 @@
 .backgroundTextureBody {
     background-image: url("../images/generalbackgroundtexture.jpg");
-    background-repeat: repeat-y
+    background-repeat: repeat-y;
     background-size: cover;
 }
 
-.main-page-background {
+.heroImage {
 	background-image: url("../images/background.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	min-height: 603px;
+	min-height: 300px;
 	padding-bottom: 10px;
 }
 
@@ -17,17 +17,15 @@
     margin: 0em 5em;
 }
 
-/* On landscape oriented viewports the background image takes up the whole screen,
-the modules underneath should be visible so the view is not forced as big as portrait oriented
-viewports */
-/* @media screen and (orientation: landscape) {
-  .main-page-background {
-      min-height: 300px;
+/* mediaqueries necessary to prevent hero image from feeling the whole viewport, the content underneath should be partly visible so the user is aware of it. On the other hand on very wide viewports the hero image cann have a bit more height */
+@media screen and (orientation: landscape) and (max-width: 768px) {
+  .heroImage {
+      min-height: 150px;
   }
 }
 
-@media (min-width: 576px) and (orientation: landscape) {
-  .main-page-background {
+@media screen and (min-width: 1024px) {
+  .heroImage {
       min-height: 450px;
   }
-} */
+}
