@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 <section class="container-fluid variableFormContainer">
+    <div class="row header headerNPCOverview">
+        <div class="col s8">
+            Character overview
+        </div>
+        <div class="col s2">
+            <a href="" class="waves-effect waves-light btn btn_small blue-grey darken-3">Edit</a>
+        </div>
+        <div class="col s2">
+            <a href="" class="waves-effect waves-light btn btn_small blue-grey darken-3">Del</a>
+        </div>        
+    </div>
     <div class="row">
         <form class="col s12">
             <!-- New row for name and level -->
             <div class="row">
                 <!-- display field for name -->
-                <div class="input-field col s10">
-                    <input disabled value="{{ npc.name }}" id="npcOverviewName" type="text" class="validate">
-                    <label for="npcOverviewName">Name</label>
+                <div class="input-field col s10 text-darken-2">
+                    <input disabled value="{{ npc.name }}" id="npcOverviewName" type="text" class="validate styleLabelText">
+                    <label for="npcOverviewName styleLabelText">Name</label>
                 </div>
                 <!-- display field for level -->
                 <div class="input-field col s2">

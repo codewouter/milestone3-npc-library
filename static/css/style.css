@@ -27,6 +27,12 @@
     margin-bottom: 5px;
 }
 
+.headerNPCOverview {
+    font-size: 1.7rem;
+    background-color: rgba(255,255,255,0.2);
+}
+
+
 /* ----------- welcome/landing page classes ----------- */
 /* positions and aligns hero image */
 .heroImage {
@@ -37,6 +43,11 @@
 	min-height: 300px;
 	padding-bottom: 10px;
 }
+
+.navWrapperNPCOverview {
+    background-color: black;
+}
+
 
 /* ----------- Media queries ----------- */
 /* mediaqueries necessary to prevent hero image from filing the whole viewport (vertically), the content underneath should
