@@ -13,74 +13,74 @@
         </div>        
     </div>
     <div class="row">
-        <form class="col s12">
+        <form class="col s12 blue-text text-darken-3">
             <!-- New row for name and level -->
             <div class="row">
                 <!-- display field for name -->
-                <div class="input-field col s10 text-darken-2">
-                    <input disabled value="{{ npc.name }}" id="npcOverviewName" type="text" class="validate styleLabelText">
-                    <label for="npcOverviewName styleLabelText">Name</label>
+                <div class="input-field col s10 blue-text text-darken-3">
+                    <input disabled value="{{ npc.name }}" id="npcOverviewName" type="text" class="validate black-text">
+                    <label class="grey-text text-darken-4" for="npcOverviewName">Name</label>
                 </div>
                 <!-- display field for level -->
                 <div class="input-field col s2">
-                    <input disabled value="{{ npc.level }}" id="npcOverviewLevel" type="text" class="validate">
-                    <label for="npcOverviewLevel">Level</label>
+                    <input disabled value="{{ npc.level }}" id="npcOverviewLevel" type="text" class="validate black-text">
+                    <label class="grey-text text-darken-4" for="npcOverviewLevel">Level</label>
                 </div>
             </div>
             <!-- New row for race and class -->
             <div class="row">
                 <!-- display field for race -->
                 <div class="input-field col s6">
-                    <input disabled value="{{ npc.race }}" id="npcOverviewRace" type="text" class="validate">
-                    <label for="npcOverviewRace">Race</label>
+                    <input disabled value="{{ npc.race }}" id="npcOverviewRace" type="text" class="validate black-text">
+                    <label class="grey-text text-darken-4" for="npcOverviewRace">Race</label>
                 </div>
                 <!-- display field for class -->
                 <div class="input-field col s6">
-                    <input disabled value="{{ npc.class }}" id="npcOverviewClass" type="text" class="validate">
-                    <label for="npcOverviewClass">Class</label>
+                    <input disabled value="{{ npc.class }}" id="npcOverviewClass" type="text" class="validate black-text">
+                    <label class="grey-text text-darken-4" for="npcOverviewClass">Class</label>
                 </div>
             </div>
             <!-- New row for str/dex/con -->
             <div class="row">
                 <!-- display field for Strength -->
                 <div class="input-field col s4">
-                    <input disabled value="{{ npc.strength }}" id="npcOverviewStrength" type="text" class="validate">
-                    <label for="npcOverviewStrength">Strength</label>
+                    <input disabled value="{{ npc.strength }}" id="npcOverviewStrength" type="text" class="validate black-text">
+                    <label class="grey-text text-darken-4" for="npcOverviewStrength">Strength</label>
                 </div>
                 <!-- display field for Dexterity -->
                 <div class="input-field col s4">
-                    <input disabled value="{{ npc.dexterity }}" id="npcOverviewDexterity" type="text" class="validate">
-                    <label for="npcOverviewDexterity">Dexterity</label>
+                    <input disabled value="{{ npc.dexterity }}" id="npcOverviewDexterity" type="text" class="validate black-text">
+                    <label class="grey-text text-darken-4" for="npcOverviewDexterity">Dexterity</label>
                 </div>
                 <!-- display field for Constitution -->
                 <div class="input-field col s4">
-                    <input disabled value="{{ npc.constitution }}" id="npcOverviewConstitution" type="text" class="validate">
-                    <label for="npcOverviewConstitution">Constitution</label>
+                    <input disabled value="{{ npc.constitution }}" id="npcOverviewConstitution" type="text" class="validate black-text">
+                    <label class="grey-text text-darken-4" for="npcOverviewConstitution">Constitution</label>
                 </div>
             </div>
             <!-- New row for str/dex/con -->
             <div class="row">
                 <!-- display field for Intelligence -->
                 <div class="input-field col s4">
-                    <input disabled value="{{ npc.intelligence }}" id="npcOverviewIntelligence" type="text" class="validate">
-                    <label for="npcOverviewIntelligence">Intelligence</label>
+                    <input disabled value="{{ npc.intelligence }}" id="npcOverviewIntelligence" type="text" class="validate black-text">
+                    <label class="grey-text text-darken-4" for="npcOverviewIntelligence">Intelligence</label>
                 </div>
                 <!-- display field for Wisdom -->
                 <div class="input-field col s4">
-                    <input disabled value="{{ npc.wisdom }}" id="npcOverviewWisdom" type="text" class="validate">
-                    <label for="npcOverviewWisdom">Wisdom</label>
+                    <input disabled value="{{ npc.wisdom }}" id="npcOverviewWisdom" type="text" class="validate black-text">
+                    <label class="grey-text text-darken-4" for="npcOverviewWisdom">Wisdom</label>
                 </div>
                 <!-- display field for Charisma -->
                 <div class="input-field col s4">
-                    <input disabled value="{{ npc.charisma }}" id="npcOverviewCharisma" type="text" class="validate">
-                    <label for="npcOverviewCharisma">Charisma</label>
+                    <input disabled value="{{ npc.charisma }}" id="npcOverviewCharisma" type="text" class="validate black-text">
+                    <label class="grey-text text-darken-4" for="npcOverviewCharisma">Charisma</label>
                 </div>
             </div>
             <!-- display field for description -->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea disabled value="" id="npcOverviewDescription" class="materialize-textarea">{{ npc.description }}</textarea>
-                    <label for="npcOverviewDescription">Description</label>
+                    <textarea disabled value="" id="npcOverviewDescription" class="materialize-textarea validate black-text">{{ npc.description }}</textarea>
+                    <label class="grey-text text-darken-4" for="npcOverviewDescription">Description</label>
                 </div>
             </div>
         </form>
