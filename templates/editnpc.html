@@ -20,12 +20,12 @@
                     <div class="row">
                         <!-- display input field for name -->
                         <div class="input-field col s10 blue-text text-darken-3">
-                            <input disabled value="{{ npc.name }}" id="npcOverviewName" type="text" class="validate black-text">
+                            <input value="{{ npc.name }}" id="npcOverviewName" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewName">Name</label>
                         </div>
                         <!-- display input field for level -->
                         <div class="input-field col s2">
-                            <input disabled value="{{ npc.level }}" id="npcOverviewLevel" type="text" class="validate black-text">
+                            <input value="{{ npc.level }}" id="npcOverviewLevel" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewLevel">Level</label>
                         </div>
                     </div>
@@ -33,12 +33,12 @@
                     <div class="row">
                         <!-- display input field for race -->
                         <div class="input-field col s6">
-                            <input disabled value="{{ npc.race.capitalize() }}" id="npcOverviewRace" type="text" class="validate black-text">
+                            <input value="{{ npc.race.capitalize() }}" id="npcOverviewRace" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewRace">Race</label>
                         </div>
                         <!-- display input field for class -->
                         <div class="input-field col s6">
-                            <input disabled value="{{ npc.class.capitalize() }}" id="npcOverviewClass" type="text" class="validate black-text">
+                            <input value="{{ npc.class.capitalize() }}" id="npcOverviewClass" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewClass">Class</label>
                         </div>
                     </div>
@@ -46,17 +46,17 @@
                     <div class="row">
                         <!-- display input field for Strength -->
                         <div class="input-field col s4">
-                            <input disabled value="{{ npc.strength }}" id="npcOverviewStrength" type="text" class="validate black-text">
+                            <input value="{{ npc.strength }}" id="npcOverviewStrength" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewStrength">Strength</label>
                         </div>
                         <!-- display input field for Dexterity -->
                         <div class="input-field col s4">
-                            <input disabled value="{{ npc.dexterity }}" id="npcOverviewDexterity" type="text" class="validate black-text">
+                            <input value="{{ npc.dexterity }}" id="npcOverviewDexterity" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewDexterity">Dexterity</label>
                         </div>
                         <!-- display input field for Constitution -->
                         <div class="input-field col s4">
-                            <input disabled value="{{ npc.constitution }}" id="npcOverviewConstitution" type="text" class="validate black-text">
+                            <input value="{{ npc.constitution }}" id="npcOverviewConstitution" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewConstitution">Constitution</label>
                         </div>
                     </div>
@@ -64,17 +64,17 @@
                     <div class="row">
                         <!-- display input field for Intelligence -->
                         <div class="input-field col s4">
-                            <input disabled value="{{ npc.intelligence }}" id="npcOverviewIntelligence" type="text" class="validate black-text">
+                            <input value="{{ npc.intelligence }}" id="npcOverviewIntelligence" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewIntelligence">Intelligence</label>
                         </div>
                         <!-- display input field for Wisdom -->
                         <div class="input-field col s4">
-                            <input disabled value="{{ npc.wisdom }}" id="npcOverviewWisdom" type="text" class="validate black-text">
+                            <input value="{{ npc.wisdom }}" id="npcOverviewWisdom" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewWisdom">Wisdom</label>
                         </div>
                         <!-- display input field for Charisma -->
                         <div class="input-field col s4">
-                            <input disabled value="{{ npc.charisma }}" id="npcOverviewCharisma" type="text" class="validate black-text">
+                            <input value="{{ npc.charisma }}" id="npcOverviewCharisma" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewCharisma">Charisma</label>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                     <div class="row">
                         <!-- display input field for description -->
                         <div class="input-field col s12">
-                            <textarea disabled value="" id="npcOverviewDescription" class="materialize-textarea validate black-text">{{ npc.description }}</textarea>
+                            <textarea value="" id="npcOverviewDescription" class="materialize-textarea validate black-text">{{ npc.description }}</textarea>
                             <label class="grey-text text-darken-4" for="npcOverviewDescription">Description</label>
                         </div>
                     </div>
