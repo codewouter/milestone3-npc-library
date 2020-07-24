@@ -6,7 +6,7 @@ The milestone 3 project will be a webpage to showcase content I lear
 
 DnD is short for Dungeons and Dragons and it comprises of a game where a party goes on big adventures. More on this on the [wiki](https://en.wikipedia.org/wiki/Dungeons_%26_Dragons_). These adventures play out mostly in the imagination of the players and especially the story leader called the Dungeon Master. The latter will use a premade adventure but sometimes think it all up him (or her)self). In the fantasy world a lot of non player characters reside, these are the NPS's (which is of course short for Non Player Character). It is hard to keep track of all these entities, so that's where this website comes in. A place where to add, edit, update and if necessary delete non player characters of the world. This way the information can be accessed anyplace anywhere as long as there is a browser and an internet connection!
 
-At this point I will focus this library on DnD 5th edition. This means I will have the following common DnD statistics for a character:
+At this point I will focus this library on DnD 5th edition. This means the library will have the following common DnD statistics for a character:
 * Name
 * Level
 * Race
@@ -60,6 +60,7 @@ Other
 
 * The navbar will have quicklinks to Home, NPC List, Races and Classes.
 * Races and classes will be capitalized, the NPC name will not be, since that is all up to the user and it becomes a matter of taste. Should it be 'Duke Duvel of Moortgat' or Duke Duvel Of Moortgat', etc.
+* During development I got the idea to use a form with locked input fields to display all statistics for a character. Then, when the edit button is pressed the form can be re-used with unlocked fields to edit where needed. This way the user will have a very easy time editing the form as the display is identical. The create character page can be copied the same way, but with empty fields (or placeholders). This ensures powerful consistency.
 
 ### Mockups
 

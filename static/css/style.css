@@ -33,15 +33,18 @@ nav {
     background-image: linear-gradient(to right, #c64d29, #ecd6bb);
 }
 
+/* pushes the logo away from the left edge */
 nav .brand-logo {
     margin-left: 10%; 
 }
 
+/* pushes the navbar elements away from the right edge */
 nav ul {
     margin: 0;
     margin-right: 10%;
 }
 
+/* increases the font size of navbar elements (only visible on widescreens) */
 nav ul a {
     font-size: 1.3rem;
 }
