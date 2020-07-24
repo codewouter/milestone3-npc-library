@@ -56,7 +56,10 @@ The layout of the site will be:
 * Races: A page where all races are listed that can be chosen. Here buttons should be present for every entry to edit or delete. Also a button to create a new race.
 * Classes: Like the Races page, but for classes.
 
-The navbar will have quicklinks to Home, NPC List, Races and Classes. 
+Other
+
+* The navbar will have quicklinks to Home, NPC List, Races and Classes.
+* Races and classes will be capitalized, the NPC name will not be, since that is all up to the user and it becomes a matter of taste. Should it be 'Duke Duvel of Moortgat' or Duke Duvel Of Moortgat', etc.
 
 ### Mockups
 

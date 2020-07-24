@@ -32,6 +32,12 @@ def npc_overview(npc_id):
     return render_template('npcoverview.html', npc=currentNPC)
 
 
+@app.route('/edit_npc/<npc_id>')
+def edit_npc(npc_id):
+    currentNPC = mongo.db.NPC.find_one({"_id": ObjectId(npc_id)})
+    return render_template('editnpc.html', npc=currentNPC)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
