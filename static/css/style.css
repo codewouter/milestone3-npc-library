@@ -27,6 +27,33 @@
     margin-bottom: 5px;
 }
 
+/* ----------- classes to adjust basic materialize Navbar ----------- */
+
+nav {
+    background-image: linear-gradient(to right, #c64d29, #ecd6bb);
+    /* width: 100%;
+    height: 56px;
+    line-height: 56px; */
+}
+
+nav ul {
+    margin: 0;
+    margin-right: 10%;
+}
+
+nav ul a {
+    font-size: 1.3rem;
+}
+
+nav .brand-logo {
+    /* position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.9rem;
+    padding: 0; */
+    margin-left: 10%;
+}
+
 /* ----------- welcome/landing page classes ----------- */
 /* positions and aligns hero image */
 .heroImage {

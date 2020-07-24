@@ -10,19 +10,20 @@
     </head>
     <body class="backgroundTextureBody">
         <!-- navbar from materialize -->
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Logo</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('welcome')}}">Home</a></li>
-                    <li><a href="{{url_for('get_npcs')}}">NPC List</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
-                </ul>
-            </div>
-        </nav>
-
+        <div class="container-fluid">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="{{url_for('welcome')}}" class="brand-logo cyan-text text-lighten-5">D&D NPC Library</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down  cyan-text text-lighten-5">
+                        <li><a href="{{url_for('welcome')}}" class="cyan-text text-lighten-5">Home</a></li>
+                        <li><a href="{{url_for('get_npcs')}}" class="cyan-text text-lighten-5">NPC List</a></li>
+                        <li><a href="collapsible.html" class="cyan-text text-lighten-5">Javascript</a></li>
+                        <li><a href="mobile.html" class="cyan-text text-lighten-5">Mobile</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{url_for('welcome')}}">Home</a></li>
             <li><a href="{{url_for('get_npcs')}}">NPC List</a></li>
