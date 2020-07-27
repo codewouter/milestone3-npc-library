@@ -40,7 +40,7 @@ def edit_npc(npc_id):
 @app.route('/update_npc/<npc_id>', methods=["POST"])
 def update_npc(npc_id):
     npcs = mongo.db.NPC
-    npcs.update({'_id': ObjectId('npc_id')},
+    npcs.update({'_id': ObjectId(npc_id)},
     {
         'name': request.form.get('npcOverviewName'),
         'race': request.form.get('npcOverviewRace'),
@@ -54,7 +54,7 @@ def update_npc(npc_id):
         'charisma': request.form.get('npcOverviewCharisma'),
         'description': request.form.get('npcOverviewDescription')
     })
-    return redirect(url_for('npc_overview'))
+    return redirect(url_for('npc_overview', npc_id=npc_id))
 
 
 if __name__ == '__main__':
