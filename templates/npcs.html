@@ -15,7 +15,7 @@
         <tbody>
         {% for npc in npcs %}
             <tr>
-                <td>{{ npc.name }}</td>
+                <td class="truncate">{{ npc.name }}</td>
                 <td><a href="{{url_for('npc_overview', npc_id=npc._id)}}" class="waves-effect waves-light btn btn_small blue-grey darken-3">View</a></td>
                 <td>{{ npc.level }}</td>
                 <td>{{ npc.race.capitalize() }}</td>
