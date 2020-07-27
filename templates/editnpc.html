@@ -26,7 +26,7 @@
                         </div>
                         <!-- display input field for level -->
                         <div class="input-field col s2">
-                            <input value="{{ npc.level }}" id="npcOverviewLevel" name="npcOverviewLevel" type="text" class="validate black-text">
+                            <input value="{{ npc.level }}" id="npcOverviewLevel" name="npcOverviewLevel" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewLevel">Level</label>
                         </div>
                     </div>
@@ -34,48 +34,48 @@
                     <div class="row">
                         <!-- display input field for race -->
                         <div class="input-field col s6">
-                            <input value="{{ npc.race.capitalize() }}" id="npcOverviewRace" name="npcOverviewRace"type="text" class="validate black-text">
+                            <input value="{{ npc.race.capitalize() }}" id="npcOverviewRace" name="npcOverviewRace" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewRace">Race</label>
                         </div>
                         <!-- display input field for class -->
                         <div class="input-field col s6">
-                            <input value="{{ npc.class.capitalize() }}" id="npcOverviewClass" name="npcOverviewClass"type="text" class="validate black-text">
+                            <input value="{{ npc.class.capitalize() }}" id="npcOverviewClass" name="npcOverviewClass" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewClass">Class</label>
                         </div>
                     </div>
-                    <!-- New row for str/dex/con -->
+                    <!-- New row for strength/dexterity/constitution -->
                     <div class="row">
                         <!-- display input field for Strength -->
                         <div class="input-field col s4">
-                            <input value="{{ npc.strength }}" id="npcOverviewStrength" name="npcOverviewStrength"type="text" class="validate black-text">
+                            <input value="{{ npc.strength }}" id="npcOverviewStrength" name="npcOverviewStrength" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewStrength">Strength</label>
                         </div>
                         <!-- display input field for Dexterity -->
                         <div class="input-field col s4">
-                            <input value="{{ npc.dexterity }}" id="npcOverviewDexterity" name="npcOverviewDexterity" type="text" class="validate black-text">
+                            <input value="{{ npc.dexterity }}" id="npcOverviewDexterity" name="npcOverviewDexterity" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewDexterity">Dexterity</label>
                         </div>
                         <!-- display input field for Constitution -->
                         <div class="input-field col s4">
-                            <input value="{{ npc.constitution }}" id="npcOverviewConstitution" name="npcOverviewConstitution" type="text" class="validate black-text">
+                            <input value="{{ npc.constitution }}" id="npcOverviewConstitution" name="npcOverviewConstitution" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewConstitution">Constitution</label>
                         </div>
                     </div>
-                    <!-- New row for str/dex/con -->
+                    <!-- New row for inteliigence/wisdom/charisma -->
                     <div class="row">
                         <!-- display input field for Intelligence -->
                         <div class="input-field col s4">
-                            <input value="{{ npc.intelligence }}" id="npcOverviewIntelligence" name="npcOverviewIntelligence" type="text" class="validate black-text">
+                            <input value="{{ npc.intelligence }}" id="npcOverviewIntelligence" name="npcOverviewIntelligence" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewIntelligence">Intelligence</label>
                         </div>
                         <!-- display input field for Wisdom -->
                         <div class="input-field col s4">
-                            <input value="{{ npc.wisdom }}" id="npcOverviewWisdom" name="npcOverviewWisdom" type="text" class="validate black-text">
+                            <input value="{{ npc.wisdom }}" id="npcOverviewWisdom" name="npcOverviewWisdom" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewWisdom">Wisdom</label>
                         </div>
                         <!-- display input field for Charisma -->
                         <div class="input-field col s4">
-                            <input value="{{ npc.charisma }}" id="npcOverviewCharisma" name="npcOverviewCharisma" type="text" class="validate black-text">
+                            <input value="{{ npc.charisma }}" id="npcOverviewCharisma" name="npcOverviewCharisma" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewCharisma">Charisma</label>
                         </div>
                     </div>
