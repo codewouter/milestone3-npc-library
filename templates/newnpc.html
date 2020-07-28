@@ -4,29 +4,29 @@
     <div class="row">
         <div class="col s12">    
             <div class="row">
-                <form action="{{url_for('insert_npc', npc_id=npc._id)}}" method="POST">
+                <form action="{{ url_for('insert_npc') }}" method="POST">
                     <!-- form header for title confirm and cancel button -->
                     <div class="row header headerNPCOverview">
                         <div class="col s8">
                             Edit character
                         </div>
                         <div class="col s2">
-                            <button class="waves-effect waves-light btn btn_small blue-grey darken-3" type="submit" name="action"><i class="small material-icons">check</i></button>
+                            <button class="waves-effect waves-light btn btn_small blue-grey darken-3" type="submit"><i class="small material-icons">check</i></button>
                         </div>                        
                         <div class="col s2">
-                            <a href="{{url_for('get_npc')}}" class="waves-effect waves-light btn btn_small blue-grey darken-3"><i class="small material-icons">clear</i></a>
+                            <a href="{{url_for('get_npcs')}}" class="waves-effect waves-light btn btn_small blue-grey darken-3"><i class="small material-icons">clear</i></a>
                         </div>        
                     </div>
                     <!-- New row for name and level -->
                     <div class="row">
                         <!-- display input field for name -->
                         <div class="input-field col s10 blue-text text-darken-3">
-                            <input value="" placeholder="Enter name" id="npcOverviewName" name="npcOverviewName" type="text" class="validate black-text">
+                            <input value="" placeholder="Enter name" id="npcOverviewName" name="name" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewName">Name</label>
                         </div>
                         <!-- display input field for level -->
                         <div class="input-field col s2">
-                            <input value="" id="npcOverviewLevel" name="npcOverviewLevel" type="number" min="1" class="validate black-text">
+                            <input value="" id="npcOverviewLevel" name="level" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewLevel">Level</label>
                         </div>
                     </div>
@@ -34,12 +34,12 @@
                     <div class="row">
                         <!-- display input field for race -->
                         <div class="input-field col s6">
-                            <input value="" id="npcOverviewRace" name="npcOverviewRace" type="text" class="validate black-text">
+                            <input value="" id="npcOverviewRace" name="race" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewRace">Race</label>
                         </div>
                         <!-- display input field for class -->
                         <div class="input-field col s6">
-                            <input value="" id="npcOverviewClass" name="npcOverviewClass" type="text" class="validate black-text">
+                            <input value="" id="npcOverviewClass" name="class" type="text" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewClass">Class</label>
                         </div>
                     </div>
@@ -47,17 +47,17 @@
                     <div class="row">
                         <!-- display input field for Strength -->
                         <div class="input-field col s4">
-                            <input value="" id="npcOverviewStrength" name="npcOverviewStrength" type="number" min="1" class="validate black-text">
+                            <input value="" id="npcOverviewStrength" name="strength" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewStrength">Strength</label>
                         </div>
                         <!-- display input field for Dexterity -->
                         <div class="input-field col s4">
-                            <input value="" id="npcOverviewDexterity" name="npcOverviewDexterity" type="number" min="1" class="validate black-text">
+                            <input value="" id="npcOverviewDexterity" name="dexterity" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewDexterity">Dexterity</label>
                         </div>
                         <!-- display input field for Constitution -->
                         <div class="input-field col s4">
-                            <input value="" id="npcOverviewConstitution" name="npcOverviewConstitution" type="number" min="1" class="validate black-text">
+                            <input value="" id="npcOverviewConstitution" name="constitution" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewConstitution">Constitution</label>
                         </div>
                     </div>
@@ -65,17 +65,17 @@
                     <div class="row">
                         <!-- display input field for Intelligence -->
                         <div class="input-field col s4">
-                            <input value="" id="npcOverviewIntelligence" name="npcOverviewIntelligence" type="number" min="1" class="validate black-text">
+                            <input value="" id="npcOverviewIntelligence" name="intelligence" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewIntelligence">Intelligence</label>
                         </div>
                         <!-- display input field for Wisdom -->
                         <div class="input-field col s4">
-                            <input value="" id="npcOverviewWisdom" name="npcOverviewWisdom" type="number" min="1" class="validate black-text">
+                            <input value="" id="npcOverviewWisdom" name="wisdom" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewWisdom">Wisdom</label>
                         </div>
                         <!-- display input field for Charisma -->
                         <div class="input-field col s4">
-                            <input value="" id="npcOverviewCharisma" name="npcOverviewCharisma" type="number" min="1" class="validate black-text">
+                            <input value="" id="npcOverviewCharisma" name="charisma" type="number" min="1" class="validate black-text">
                             <label class="grey-text text-darken-4" for="npcOverviewCharisma">Charisma</label>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                     <div class="row">
                         <!-- display input field for description -->
                         <div class="input-field col s12">
-                            <textarea value="" id="npcOverviewDescription" name="npcOverviewDescription" class="materialize-textarea validate black-text"></textarea>
+                            <textarea value="" id="npcOverviewDescription" name="description" class="materialize-textarea validate black-text"></textarea>
                             <label class="grey-text text-darken-4" for="npcOverviewDescription">Description</label>
                         </div>
                     </div>

@@ -17,12 +17,24 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/welcome')
 def welcome():
-    return render_template("welcome.html")
+    return render_template('welcome.html')
 
 
 @app.route('/get_npcs')
 def get_npcs():
     return render_template("npcs.html", npcs=mongo.db.NPC.find().sort('name', 1))
+
+
+@app.route('/add_npc')
+def add_npc():
+    return render_template('newnpc.html')
+
+
+@app.route('/insert_npc', methods=['POST'])
+def insert_npc():
+    npcs = mongo.db.NPC
+    npcs.insert_one(request.form.to_dict())
+    return redirect(url_for('get_npcs'))
 
 
 @app.route('/npc_overview/<npc_id>')
