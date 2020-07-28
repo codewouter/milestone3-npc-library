@@ -21,6 +21,12 @@
     margin: auto;
 }
 
+/* class to style header for forms and tables*/
+.formHeader {
+    width: 100%;
+    font-size: 1.7rem;
+}
+
 /* reduces the materialize margins on various input fields */
 .input-field {
     margin-top: 5px;
@@ -62,16 +68,7 @@ nav ul a {
 	padding-bottom: 10px;
 }
 
-/* NPC Overview page classes */
-.headerNPCOverview {
-    width: 100%;
-    font-size: 1.7rem;
-    background-color: rgba(255,255,255,0.2);
-}
-
-
 /* ----------- Media queries ----------- */
-
 /* Media query to reset margin on logo and navbar elements */
 @media only screen and (max-width: 767px) {
     nav .brand-logo {
