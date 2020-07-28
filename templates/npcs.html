@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="variableFormContainer">
+<section class="container-fluid variableFormContainer">
+    <div class="row header headerNPCOverview">        
+        <div class="col s10">
+            Character overview
+        </div>
+        <div class="col s2">
+            <a href="" class="waves-effect waves-light btn btn_small blue-grey darken-3">New</a>
+        </div>     
+    </div>
     <table>
         <thead>
             <tr>
@@ -15,7 +23,7 @@
         <tbody>
         {% for npc in npcs %}
             <tr>
-                <td class="truncate">{{ npc.name }}</td>
+                <td>{{ npc.name }}</td>
                 <td><a href="{{url_for('npc_overview', npc_id=npc._id)}}" class="waves-effect waves-light btn btn_small blue-grey darken-3">View</a></td>
                 <td>{{ npc.level }}</td>
                 <td>{{ npc.race.capitalize() }}</td>
