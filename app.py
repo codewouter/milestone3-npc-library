@@ -80,6 +80,23 @@ def get_races():
     return render_template('races.html', races=mongo.db.race.find().sort('name', 1))
 
 
+@app.route('/edit_race/<race_id>')
+def edit_race(race_id):
+    currentRace = mongo.db.race.find_one({"_id": ObjectId(race_id)})
+    return render_template('editrace.html', race=currentRace)
+
+
+@app.route('/update_race/<race_id>', methods=["POST"])
+def update_race(race_id):
+    races = mongo.db.race
+    races.update({'_id': ObjectId(race_id)},
+    {
+        'race': request.form.get('raceName'),
+        'description': request.form.get('raceDescription')
+    })
+    return redirect(url_for('get_races'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
