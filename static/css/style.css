@@ -17,13 +17,13 @@
 
 /* Used to reduce with of forms and lists on wide viewscreens, see media query section */
 .variableFormContainer {
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
 /* class to style header for forms and tables*/
 .formHeader {
-    width: 100%;
+    width: 95%;
     font-size: 1.7rem;
 }
 

@@ -97,6 +97,12 @@ def update_race(race_id):
     return redirect(url_for('get_races'))
 
 
+@app.route('/delete_race/<race_id>')
+def delete_race(race_id):
+    mongo.db.race.remove({'_id': ObjectId(race_id)})
+    return redirect(url_for('get_races'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
