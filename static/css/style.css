@@ -34,7 +34,7 @@
 }
 
 /* ----------- classes to adjust basic materialize Navbar ----------- */
-
+/* gradient styling of navbar */
 nav {
     background-image: linear-gradient(to right, #c64d29, #ecd6bb);
 }
@@ -54,11 +54,6 @@ nav ul {
 nav ul a {
     font-size: 1.3rem;
 }
-
-/* used to style the various forms */
-/* .formStyling {
-    padding: 50px;
-} */
 
 /* ----------- welcome/landing page classes ----------- */
 /* positions and aligns hero image */

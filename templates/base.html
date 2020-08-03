@@ -19,7 +19,7 @@
                         <li><a href="{{url_for('welcome')}}" class="cyan-text text-lighten-5">Home</a></li>
                         <li><a href="{{url_for('get_npcs')}}" class="cyan-text text-lighten-5">NPC List</a></li>
                         <li><a href="{{url_for('add_npc')}}" class="cyan-text text-lighten-5">Create NPC</a></li>
-                        <li><a href="" class="cyan-text text-lighten-5">Races</a></li>
+                        <li><a href="{{url_for('get_races')}}" class="cyan-text text-lighten-5">Races</a></li>
                         <li><a href="" class="cyan-text text-lighten-5">Classes</a></li>
                     </ul>
                 </div>
@@ -53,6 +53,7 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $('.sidenav').sidenav();
+                $('.collapsible').collapsible();
             });
         </script>
     </body>

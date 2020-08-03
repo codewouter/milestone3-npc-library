@@ -75,6 +75,11 @@ def delete_npc(npc_id):
     return redirect(url_for('get_npcs'))
 
 
+@app.route('/get_races')
+def get_races():
+    return render_template('races.html', races=mongo.db.race.find().sort('name', 1))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
