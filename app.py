@@ -27,7 +27,9 @@ def get_npcs():
 
 @app.route('/add_npc')
 def add_npc():
-    return render_template('newnpc.html')
+    allRaces = mongo.db.race.find()
+    allClasses = mongo.db.NPCClass.find()
+    return render_template('newnpc.html', races=allRaces, classes=allClasses)
 
 
 @app.route('/insert_npc', methods=['POST'])
@@ -46,7 +48,9 @@ def npc_overview(npc_id):
 @app.route('/edit_npc/<npc_id>')
 def edit_npc(npc_id):
     currentNPC = mongo.db.NPC.find_one({"_id": ObjectId(npc_id)})
-    return render_template('editnpc.html', npc=currentNPC)
+    allRaces = mongo.db.race.find()
+    allClasses = mongo.db.NPCClass.find()
+    return render_template('editnpc.html', npc=currentNPC, races=allRaces, classes=allClasses)
 
 
 @app.route('/update_npc/<npc_id>', methods=["POST"])
@@ -118,7 +122,7 @@ def delete_race(race_id):
 # ---------- routes for classes ----------
 @app.route('/get_classes')
 def get_classes():
-    return render_template('classes.html', classes=mongo.db.NPCClass.find().sort('NPCClass', 1))
+    return render_template('classes.html', classes=mongo.db.NPCClass.find().sort('class', 1))
 
 
 @app.route('/add_class')
@@ -144,7 +148,7 @@ def update_class(class_id):
     classes = mongo.db.NPCCLass
     classes.update({'_id': ObjectId(class_id)},
     {
-        'NPCClass': request.form.get('className'),
+        'NPCClass': request.form.get('className.lower()'),
         'description': request.form.get('classDescription')
     })
     return redirect(url_for('get_classes'))

@@ -5,7 +5,7 @@
         <link rel="shortcut icon" href="./static/images/dungeonfavicon.jpg" type="image/jpg" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
         <meta name="viewport" content="width=device-width">    
     </head>
     <body class="backgroundTextureBody">
@@ -13,24 +13,24 @@
         <div class="container-fluid">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="{{url_for('welcome')}}" class="brand-logo cyan-text text-lighten-5">D&D NPC Library</a>
+                    <a href="{{ url_for('welcome') }}" class="brand-logo cyan-text text-lighten-5">D&D NPC Library</a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down  cyan-text text-lighten-5">
-                        <li><a href="{{url_for('welcome')}}" class="cyan-text text-lighten-5">Home</a></li>
-                        <li><a href="{{url_for('get_npcs')}}" class="cyan-text text-lighten-5">NPC List</a></li>
-                        <li><a href="{{url_for('add_npc')}}" class="cyan-text text-lighten-5">Create NPC</a></li>
-                        <li><a href="{{url_for('get_races')}}" class="cyan-text text-lighten-5">Races</a></li>
-                        <li><a href="{{url_for('get_classes')}}" class="cyan-text text-lighten-5">Classes</a></li>
+                        <li><a href="{{ url_for('welcome') }}" class="cyan-text text-lighten-5">Home</a></li>
+                        <li><a href="{{ url_for('get_npcs') }}" class="cyan-text text-lighten-5">NPC List</a></li>
+                        <li><a href="{{ url_for('add_npc') }}" class="cyan-text text-lighten-5">Create NPC</a></li>
+                        <li><a href="{{ url_for('get_races') }}" class="cyan-text text-lighten-5">Races</a></li>
+                        <li><a href="{{ url_for('get_classes') }}" class="cyan-text text-lighten-5">Classes</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{url_for('welcome')}}" class="cyan-text text-lighten-5">Home</a></li>
-            <li><a href="{{url_for('get_npcs')}}" class="cyan-text text-lighten-5">NPC List</a></li>
-            <li><a href="{{url_for('add_npc')}}" class="cyan-text text-lighten-5">Create NPC</a></li>
-            <li><a href="{{url_for('get_races')}}" class="cyan-text text-lighten-5">Races</a></li>
-            <li><a href="{{url_for('get_classes')}}" class="cyan-text text-lighten-5">Classes</a></li>
+            <li><a href="{{ url_for('welcome') }}" class="cyan-text text-lighten-5">Home</a></li>
+            <li><a href="{{ url_for('get_npcs') }}" class="cyan-text text-lighten-5">NPC List</a></li>
+            <li><a href="{{ url_for('add_npc') }}" class="cyan-text text-lighten-5">Create NPC</a></li>
+            <li><a href="{{ url_for('get_races') }}" class="cyan-text text-lighten-5">Races</a></li>
+            <li><a href="{{ url_for('get_classes') }}" class="cyan-text text-lighten-5">Classes</a></li>
         </ul>
         <!-- hero image placement -->
         <section>
@@ -56,6 +56,7 @@
                 $('.sidenav').sidenav();
                 $('.collapsible').collapsible();
                 $('.modal').modal();
+                $('select').formSelect();
             });
         </script>
     </body>

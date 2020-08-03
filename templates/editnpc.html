@@ -32,15 +32,33 @@
                     </div>
                     <!-- New row for race and class -->
                     <div class="row">
-                        <!-- display input field for race -->
+                        <!-- Selectbox for race -->
                         <div class="input-field col s6">
-                            <input value="{{ npc.race.capitalize() }}" id="npcOverviewRace" name="npcOverviewRace" type="text" class="validate black-text">
-                            <label class="grey-text text-darken-4" for="npcOverviewRace">Race</label>
+                            <select id="race" name="npcOverviewRace">
+                                <option value="" disabled selected>Choose race</option>
+                                {% for race in races %}
+                                    {% if race.race == npc.race%}
+                                    <option value="{{race.race}}" selected >{{race.race.capitalize()}}</option>
+                                    {% else %}
+                                    <option value="{{race.race}}">{{race.race.capitalize()}}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                            <label>Race</label>
                         </div>
-                        <!-- display input field for class -->
+                       <!-- Selectbox for class -->
                         <div class="input-field col s6">
-                            <input value="{{ npc.class.capitalize() }}" id="npcOverviewClass" name="npcOverviewClass" type="text" class="validate black-text">
-                            <label class="grey-text text-darken-4" for="npcOverviewClass">Class</label>
+                            <select id="class" name="npcOverviewClass">
+                                <option value="" disabled selected>Choose class</option>
+                                {% for class in classes %}
+                                    {% if class.class == npc.class%}
+                                    <option value="{{class.class}}" selected >{{class.class.capitalize()}}</option>
+                                    {% else %}
+                                    <option value="{{class.class}}">{{class.class.capitalize()}}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                            <label>Class</label>
                         </div>
                     </div>
                     <!-- New row for strength/dexterity/constitution -->
