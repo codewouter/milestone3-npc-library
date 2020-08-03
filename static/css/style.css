@@ -34,9 +34,14 @@
 }
 
 /* ----------- classes to adjust basic materialize Navbar ----------- */
-/* gradient styling of navbar */
-nav {
+/* gradient styling of navbar and sidenav */
+nav, .sidenav {
     background-image: linear-gradient(to right, #c64d29, #ecd6bb);
+}
+
+/* increase font-size of elements in sidenav */
+.sidenav li>a {
+    font-size: 1.5rem;
 }
 
 /* pushes the logo away from the left edge */
