@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container-fluid variableFormContainer">
+    <div class="row">
+        <div class="col s12">    
+            <div class="row">
+                <form action="{{ url_for('insert_class') }}" method="POST">
+                    <!-- form header for title confirm and cancel button -->
+                    <div class="row formHeader">
+                        <div class="col s8">
+                            New class
+                        </div>
+                        <div class="col s2">
+                            <button class="waves-effect waves-light btn btn_small blue-grey darken-3" type="submit"><i class="small material-icons">check</i></button>
+                        </div>                        
+                        <div class="col s2">
+                            <a href="{{url_for('get_classes')}}" class="waves-effect waves-light btn btn_small blue-grey darken-3"><i class="small material-icons">clear</i></a>
+                        </div>        
+                    </div>
+                    <!-- New row for class name -->
+                    <div class="row">
+                        <!-- display input field for class name -->
+                        <div class="input-field col s10 blue-text text-darken-3">
+                            <input value="" placeholder="Enter name" id="className" name="class" type="text" class="validate black-text" required>
+                            <label class="grey-text text-darken-4" for="className">Name</label>
+                        </div>
+                    </div>
+                    <!-- New row for description -->
+                    <div class="row">
+                        <!-- display input field for class description -->
+                        <div class="input-field col s12">
+                            <textarea value="" placeholder="Enter description" id="npcOverviewDescription" name="description" class="materialize-textarea validate black-text"></textarea>
+                            <label class="grey-text text-darken-4" for="classDescription">Description</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

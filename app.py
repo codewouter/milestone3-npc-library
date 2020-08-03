@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 def welcome():
     return render_template('welcome.html')
 
-
+# ---------- routes for NPCs ----------
 @app.route('/get_npcs')
 def get_npcs():
     return render_template("npcs.html", npcs=mongo.db.NPC.find().sort('name', 1))
@@ -74,10 +74,22 @@ def delete_npc(npc_id):
     mongo.db.NPC.remove({'_id': ObjectId(npc_id)})
     return redirect(url_for('get_npcs'))
 
-
+# ---------- routes for races ----------
 @app.route('/get_races')
 def get_races():
-    return render_template('races.html', races=mongo.db.race.find().sort('name', 1))
+    return render_template('races.html', races=mongo.db.race.find().sort('race', 1))
+
+
+@app.route('/add_race')
+def add_race():
+    return render_template('newrace.html')
+
+
+@app.route('/insert_race', methods=['POST'])
+def insert_race():
+    races = mongo.db.race
+    races.insert_one(request.form.to_dict())
+    return redirect(url_for('get_races'))
 
 
 @app.route('/edit_race/<race_id>')
@@ -101,6 +113,48 @@ def update_race(race_id):
 def delete_race(race_id):
     mongo.db.race.remove({'_id': ObjectId(race_id)})
     return redirect(url_for('get_races'))
+
+# ---------- routes for classes ----------
+
+@app.route('/get_classes')
+def get_classes():
+    return render_template('classes.html', classes=mongo.db.class.find().sort('class', 1))
+
+
+@app.route('/add_class')
+def add_class():
+    return render_template('newclass.html')
+
+
+@app.route('/insert_class', methods=['POST'])
+def insert_class():
+    classes = mongo.db.class
+    classes.insert_one(request.form.to_dict())
+    return redirect(url_for('get_classes'))
+
+
+@app.route('/edit_class/<class_id>')
+def edit_class(class_id):
+    currentClass = mongo.db.class.find_one({"_id": ObjectId(class_id)})
+    return render_template('editclass.html', class=currentClass)
+
+
+@app.route('/update_class/<class_id>', methods=["POST"])
+def update_class(class_id):
+    classes = mongo.db.class
+    classes.update({'_id': ObjectId(class_id)},
+    {
+        'class': request.form.get('className'),
+        'description': request.form.get('classDescription')
+    })
+    return redirect(url_for('get_classes'))
+
+
+@app.route('/delete_class/<class_id>')
+def delete_class(class_id):
+    mongo.db.class.remove({'_id': ObjectId(class_id)})
+    return redirect(url_for('get_classes'))
+
 
 
 if __name__ == '__main__':
