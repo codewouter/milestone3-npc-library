@@ -69,6 +69,12 @@ def update_npc(npc_id):
     return redirect(url_for('npc_overview', npc_id=npc_id))
 
 
+@app.route('/delete_npc/<npc_id>')
+def delete_npc(npc_id):
+    mongo.db.NPC.remove({'_id': ObjectId(npc_id)})
+    return redirect(url_for('get_npcs'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

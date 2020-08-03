@@ -17,7 +17,7 @@
 
 /* Used to reduce with of forms and lists on wide viewscreens, see media query section */
 .variableFormContainer {
-    width: 100%;
+    width: 90%;
     margin: auto;
 }
 
@@ -55,7 +55,10 @@ nav ul a {
     font-size: 1.3rem;
 }
 
-
+/* used to style the various forms */
+/* .formStyling {
+    padding: 50px;
+} */
 
 /* ----------- welcome/landing page classes ----------- */
 /* positions and aligns hero image */
