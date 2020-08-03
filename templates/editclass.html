@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col s12">    
             <div class="row">
-                <form action="{{url_for('update_class', class_id=class._id)}}" method="POST">
+                <form action="{{url_for('update_class', class_id=NPCClass._id)}}" method="POST">
                     <!-- form header for title confirm and cancel button -->
                     <div class="row formHeader">
                         <div class="col s8">
@@ -21,7 +21,7 @@
                     <div class="row">
                         <!-- display input field for class name -->
                         <div class="input-field col s12 blue-text text-darken-3">
-                            <input value="{{ class.class }}" id="className" name="className" type="text" class="validate black-text" required>
+                            <input value="{{ NPCClass.class }}" id="className" name="className" type="text" class="validate black-text" required>
                             <label class="grey-text text-darken-4" for="className">Class name</label>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                     <div class="row">
                         <!-- display input field for class description -->
                         <div class="input-field col s12 blue-text text-darken-3">
-                            <textarea value="" id="classDescription" name="classDescription" class="materialize-textarea validate black-text">{{ class.description }}</textarea>
+                            <textarea value="" id="classDescription" name="classDescription" class="materialize-textarea validate black-text">{{ NPCClass.description }}</textarea>
                             <label class="grey-text text-darken-4" for="classDescription">Class description</label>
                         </div>
                     </div>

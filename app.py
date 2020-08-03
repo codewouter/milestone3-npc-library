@@ -114,11 +114,11 @@ def delete_race(race_id):
     mongo.db.race.remove({'_id': ObjectId(race_id)})
     return redirect(url_for('get_races'))
 
-# ---------- routes for classes ----------
 
+# ---------- routes for classes ----------
 @app.route('/get_classes')
 def get_classes():
-    return render_template('classes.html', classes=mongo.db.class.find().sort('class', 1))
+    return render_template('classes.html', classes=mongo.db.NPCClass.find().sort('NPCClass', 1))
 
 
 @app.route('/add_class')
@@ -128,23 +128,23 @@ def add_class():
 
 @app.route('/insert_class', methods=['POST'])
 def insert_class():
-    classes = mongo.db.class
+    classes = mongo.db.NPCClass
     classes.insert_one(request.form.to_dict())
     return redirect(url_for('get_classes'))
 
 
 @app.route('/edit_class/<class_id>')
 def edit_class(class_id):
-    currentClass = mongo.db.class.find_one({"_id": ObjectId(class_id)})
-    return render_template('editclass.html', class=currentClass)
+    currentClass = mongo.db.NPCClass.find_one({"_id": ObjectId(class_id)})
+    return render_template('editclass.html', NPCClass=currentClass)
 
 
 @app.route('/update_class/<class_id>', methods=["POST"])
 def update_class(class_id):
-    classes = mongo.db.class
+    classes = mongo.db.NPCCLass
     classes.update({'_id': ObjectId(class_id)},
     {
-        'class': request.form.get('className'),
+        'NPCClass': request.form.get('className'),
         'description': request.form.get('classDescription')
     })
     return redirect(url_for('get_classes'))
@@ -152,9 +152,8 @@ def update_class(class_id):
 
 @app.route('/delete_class/<class_id>')
 def delete_class(class_id):
-    mongo.db.class.remove({'_id': ObjectId(class_id)})
+    mongo.db.NPCClass.remove({'_id': ObjectId(class_id)})
     return redirect(url_for('get_classes'))
-
 
 
 if __name__ == '__main__':
