@@ -61,8 +61,8 @@ def update_npc(npc_id):
     npcs = mongo.db.NPC
     npcs.update({'_id': ObjectId(npc_id)}, {
         'name': request.form.get('npcOverviewName'),
-        'race': request.form.get('npcOverviewRace'),
-        'class': request.form.get('npcOverviewClass'),
+        'race': request.form.get('npcOverviewRace').lower(),
+        'class': request.form.get('npcOverviewClass').lower(),
         'level': request.form.get('npcOverviewLevel'),
         'strength': request.form.get('npcOverviewStrength'),
         'dexterity': request.form.get('npcOverviewDexterity'),
