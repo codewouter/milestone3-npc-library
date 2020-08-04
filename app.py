@@ -149,10 +149,10 @@ def edit_class(class_id):
 
 @app.route('/update_class/<class_id>', methods=["POST"])
 def update_class(class_id):
-    classes = mongo.db.NPCCLass
+    classes = mongo.db.NPCClass
     classes.update({'_id': ObjectId(class_id)}, {
-        'NPCClass': request.form.get('className'),
-        'description': request.form.get('classDescription')
+        'class': request.form.get('class'),
+        'description': request.form.get('description')
     })
     return redirect(url_for('get_classes'))
 
