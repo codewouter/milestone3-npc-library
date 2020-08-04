@@ -29,8 +29,8 @@ def get_npcs():
 
 @app.route('/add_npc')
 def add_npc():
-    allRaces = mongo.db.race.find()
-    allClasses = mongo.db.NPCClass.find()
+    allRaces = mongo.db.race.find().sort('race', 1)
+    allClasses = mongo.db.NPCClass.find().sort('class', 1)
     return render_template('newnpc.html', races=allRaces, classes=allClasses)
 
 
