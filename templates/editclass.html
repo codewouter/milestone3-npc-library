@@ -21,7 +21,7 @@
                     <div class="row">
                         <!-- display input field for class name -->
                         <div class="input-field col s12 blue-text text-darken-3">
-                            <input value="{{ NPCClass.class }}" id="NPCClassName" name="class" type="text" class="validate black-text" required>
+                            <input value="{{ NPCClass.class.capitalize() }}" id="NPCClassName" name="class" type="text" class="validate black-text" required>
                             <label class="grey-text text-darken-4" for="NPCClassName">Class name</label>
                         </div>
                     </div>

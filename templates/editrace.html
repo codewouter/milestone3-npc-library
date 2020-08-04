@@ -21,7 +21,7 @@
                     <div class="row">
                         <!-- display input field for race name -->
                         <div class="input-field col s12 blue-text text-darken-3">
-                            <input value="{{ race.race }}" id="raceName" name="raceName" type="text" class="validate black-text" required>
+                            <input value="{{ race.race.capitalize() }}" id="raceName" name="raceName" type="text" class="validate black-text" required>
                             <label class="grey-text text-darken-4" for="raceName">Race name</label>
                         </div>
                     </div>
