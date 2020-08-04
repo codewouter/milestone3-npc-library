@@ -109,9 +109,8 @@ def edit_race(race_id):
 @app.route('/update_race/<race_id>', methods=["POST"])
 def update_race(race_id):
     races = mongo.db.race
-    lowerCaseRace = request.form.get('raceName').lower()
     races.update({'_id': ObjectId(race_id)}, {
-        'race': lowerCaseRace,
+        'race': request.form.get('raceName').lower(),
         'description': request.form.get('raceDescription')
     })
     return redirect(url_for('get_races'))
@@ -151,9 +150,8 @@ def edit_class(class_id):
 @app.route('/update_class/<class_id>', methods=["POST"])
 def update_class(class_id):
     classes = mongo.db.NPCClass
-    lowerCaseClass = request.form.get('class').lower()
     classes.update({'_id': ObjectId(class_id)}, {
-        'class': lowerCaseClass,
+        'class': request.form.get('class').lower(),
         'description': request.form.get('description')
     })
     return redirect(url_for('get_classes'))
