@@ -19,10 +19,12 @@ mongo = PyMongo(app)
 def welcome():
     return render_template('welcome.html')
 
+
 # ---------- routes for NPCs ----------
 @app.route('/get_npcs')
 def get_npcs():
-    return render_template("npcs.html", npcs=mongo.db.NPC.find().sort('name', 1))
+    return render_template("npcs.html",
+                           npcs=mongo.db.NPC.find().sort('name', 1))
 
 
 @app.route('/add_npc')
@@ -50,14 +52,14 @@ def edit_npc(npc_id):
     currentNPC = mongo.db.NPC.find_one({"_id": ObjectId(npc_id)})
     allRaces = mongo.db.race.find()
     allClasses = mongo.db.NPCClass.find()
-    return render_template('editnpc.html', npc=currentNPC, races=allRaces, classes=allClasses)
+    return render_template('editnpc.html', npc=currentNPC, races=allRaces,
+                           classes=allClasses)
 
 
 @app.route('/update_npc/<npc_id>', methods=["POST"])
 def update_npc(npc_id):
     npcs = mongo.db.NPC
-    npcs.update({'_id': ObjectId(npc_id)},
-    {
+    npcs.update({'_id': ObjectId(npc_id)}, {
         'name': request.form.get('npcOverviewName'),
         'race': request.form.get('npcOverviewRace'),
         'class': request.form.get('npcOverviewClass'),
@@ -77,6 +79,7 @@ def update_npc(npc_id):
 def delete_npc(npc_id):
     mongo.db.NPC.remove({'_id': ObjectId(npc_id)})
     return redirect(url_for('get_npcs'))
+
 
 # ---------- routes for races ----------
 @app.route('/get_races')
@@ -148,7 +151,7 @@ def update_class(class_id):
     classes = mongo.db.NPCCLass
     classes.update({'_id': ObjectId(class_id)},
     {
-        'NPCClass': request.form.get('className.lower()'),
+        'NPCClass': request.form.get('className'),
         'description': request.form.get('classDescription')
     })
     return redirect(url_for('get_classes'))
