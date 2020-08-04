@@ -50,8 +50,8 @@ def npc_overview(npc_id):
 @app.route('/edit_npc/<npc_id>')
 def edit_npc(npc_id):
     currentNPC = mongo.db.NPC.find_one({"_id": ObjectId(npc_id)})
-    allRaces = mongo.db.race.find()
-    allClasses = mongo.db.NPCClass.find()
+    allRaces = mongo.db.race.find().sort('race', 1)
+    allClasses = mongo.db.NPCClass.find().sort('class', 1)
     return render_template('editnpc.html', npc=currentNPC, races=allRaces,
                            classes=allClasses)
 
