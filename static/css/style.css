@@ -8,22 +8,22 @@
 
 /* resizes the materialize button because it was to big, espcially for phones */
 .btn_small {
-    height: 20px;
-    width: 50px;
-    line-height: 20px;
-    margin: 5px 5px;
-    padding: 0 0.5em;
+    height: 1.5rem;
+    line-height: 1.4rem;
+    margin: 0.1rem 0.1rem;
+    padding: 0.1rem 0.2rem;
+    font-size: 0.8rem;
 }
 
-/* Used to reduce with of forms and lists on wide viewscreens, see media query section */
+/* Used to reduce with of forms and lists on wide viewscreens and slightly on small viewports, also see media query section */
 .variableFormContainer {
-    width: 100%;
+    width: 95%;
     margin: auto;
 }
 
 /* class to style header for forms and tables*/
 .formHeader {
-    width: 95%;
+    width: 100%;
     font-size: 1.7rem;
 }
 
@@ -71,7 +71,43 @@ nav ul a {
 	padding-bottom: 10px;
 }
 
-/* ----------- Media queries ----------- */
+/* ----------- General styling media queries per viewport size ----------- */
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    h3 {
+        font-size: 1.9rem;
+    }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    h3 {
+        font-size: 2.1rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    h3 {
+        font-size: 2.3rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+
+
+/* ----------- Specific media queries ----------- */
 /* Media query to reset margin on logo and navbar elements */
 @media only screen and (max-width: 767px) {
     nav .brand-logo {
@@ -85,6 +121,7 @@ nav ul a {
         margin:0;
     }
 }
+
 /* mediaqueries necessary to prevent hero image from filing the whole viewport (vertically), the content underneath should
  be partly visible so the user is aware of it. On the other hand on very wide viewports the hero image should have a bit more height */
 @media screen and (orientation: landscape) and (max-width: 768px) {
@@ -93,15 +130,16 @@ nav ul a {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .heroImage {
       min-height: 450px;
   }
 }
 
-/* used to reduce the width of forms and lists on wide viewports */
+/* used to reduce the width of content under the hero image on wide viewports */
 @media screen and (min-width: 992px) {
     .variableFormContainer {
         width: 60%;
     }
 }
+
