@@ -1,5 +1,4 @@
 /* ----------- general classes ----------- */
-
 .wordBreak {
     word-break: break-word;
 }
@@ -30,6 +29,14 @@
 .formHeader {
     width: 100%;
     font-size: 1.7rem;
+}
+
+.buttonConfirmCancel {
+    height: 2.0rem;
+    line-height: 1.9rem;
+    margin: 0.1rem 0.1rem;
+    padding: 0.1rem 0.8rem;
+    font-size: 0.8rem;    
 }
 
 /* reduces the materialize margins on various input fields */
