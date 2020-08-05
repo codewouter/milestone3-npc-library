@@ -5,11 +5,16 @@
 }
 
 .NPCListHeader {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    border-bottom: 2px solid rgb(125, 159, 199);
+    padding-bottom: 0.5rem;
 }
 
 .NPCListRow {
     font-size: 0.8rem;
+    padding: 0.5rem 0;
+    margin-bottom: 0.2rem;
+    border-bottom: 1px solid lightsteelblue;
 }
 
 /* adds texture image to all page through body tag */
