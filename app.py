@@ -37,7 +37,10 @@ def add_npc():
 @app.route('/insert_npc', methods=['POST'])
 def insert_npc():
     npcs = mongo.db.NPC
-    npcs.insert_one(request.form.to_dict())
+    newNPCObject = request.form.to_dict()
+    newNPCObject["race"] = newNPCObject["race"].lower()
+    newNPCObject["class"] = newNPCObject["class"].lower()
+    npcs.insert_one(newNPCObject)
     return redirect(url_for('get_npcs'))
 
 
@@ -96,7 +99,9 @@ def add_race():
 @app.route('/insert_race', methods=['POST'])
 def insert_race():
     races = mongo.db.race
-    races.insert_one(request.form.to_dict())
+    newRaceObject = request.form.to_dict()
+    newRaceObject["race"] = newRaceObject["race"].lower()
+    races.insert_one(newRaceObject)
     return redirect(url_for('get_races'))
 
 
@@ -137,7 +142,9 @@ def add_class():
 @app.route('/insert_class', methods=['POST'])
 def insert_class():
     classes = mongo.db.NPCClass
-    classes.insert_one(request.form.to_dict())
+    newClassObject = request.form.to_dict()
+    newClassObject["class"] = newClassObject["class"].lower()
+    classes.insert_one(newClassObject)
     return redirect(url_for('get_classes'))
 
 

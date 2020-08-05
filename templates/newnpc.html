@@ -34,7 +34,7 @@
                     <div class="row">
                         <!-- Selectbox for race -->
                         <div class="input-field col s6">
-                            <select id="race" name="npcOverviewRace">
+                            <select id="race" name="race">
                                 <option value="" disabled selected>Choose race</option>
                                 {% for race in races %}
                                 <option value="{{race.race}}">{{race.race.capitalize()}}</option>
@@ -44,7 +44,7 @@
                         </div>
                        <!-- Selectbox for class -->
                         <div class="input-field col s6">
-                            <select id="class" name="npcOverviewClass">
+                            <select id="class" name="class">
                                 <option value="" disabled selected>Choose class</option>
                                 {% for class in classes %}
                                 <option value="{{class.class}}">{{class.class.capitalize()}}</option>
