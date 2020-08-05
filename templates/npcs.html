@@ -11,29 +11,51 @@
                     <a href="{{ url_for('add_npc') }}" class="waves-effect waves-light btn btn_small blue-grey darken-3">New</a>
                 </div>     
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th></th>
-                        <th>Level</th>
-                        <th>Race</th>
-                        <th>Class</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                {% for npc in npcs %}
-                    <tr>
-                        <td>{{ npc.name }}</td>
-                        <td><a href="{{url_for('npc_overview', npc_id=npc._id)}}" class="waves-effect waves-light btn btn_small blue-grey darken-3">View</a></td>
-                        <td>{{ npc.level }}</td>
-                        <td>{{ npc.race.capitalize() }}</td>
-                        <td>{{ npc.class.capitalize() }}</td>   
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+            <div class="row NPCListHeader">
+                <!-- name -->
+                <div class="col s4 wordBreak">
+                    Name
+                </div>
+                <!-- button -->
+                <div class="col s2">
+                </div>
+                <!-- level -->
+                <div class="col s2">
+                    Level
+                </div>
+                <!-- race -->
+                <div class="col s2 wordBreak">
+                    Race
+                </div>
+                <!-- class -->
+                <div class="col s2 wordBreak">
+                    Class
+                </div>
+            </div>
+            {% for npc in npcs %}
+            <div class="row NPCListRow">
+                <!-- name -->
+                <div class="col s4 wordBreak">
+                    {{ npc.name }}
+                </div>
+                <!-- button -->
+                <div class="col s2">
+                    <a href="{{url_for('npc_overview', npc_id=npc._id)}}" class="waves-effect waves-light btn btn_small blue-grey darken-3">View</a>
+                </div>
+                <!-- level -->
+                <div class="col s2">
+                    {{ npc.level }}
+                </div>
+                <!-- race -->
+                <div class="col s2 wordBreak">
+                    {{ npc.race.capitalize() }}
+                </div>
+                <!-- class -->
+                <div class="col s2 wordBreak">
+                    {{ npc.class.capitalize() }}
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

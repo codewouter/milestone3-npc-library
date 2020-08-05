@@ -1,4 +1,17 @@
 /* ----------- general classes ----------- */
+
+.wordBreak {
+    word-break: break-word;
+}
+
+.NPCListHeader {
+    font-size: 0.8rem;
+}
+
+.NPCListRow {
+    font-size: 0.8rem;
+}
+
 /* adds texture image to all page through body tag */
 .backgroundTextureBody {
     background-image: url("../images/generalbackgroundtexture.jpg");
