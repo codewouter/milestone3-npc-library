@@ -10,15 +10,6 @@
     background-size: cover;
 }
 
-/* resizes the materialize button because it was to big, espcially for phones */
-.btn_small {
-    height: 1.5rem;
-    line-height: 1.4rem;
-    margin: 0.1rem 0.1rem;
-    padding: 0.1rem 0.2rem;
-    font-size: 0.8rem;
-}
-
 /* Used to reduce with of forms and lists on wide viewscreens and slightly on small viewports, also see media query section */
 .variableFormContainer {
     width: 100%;
@@ -105,10 +96,17 @@ nav ul a {
     h3 {
         font-size: 1.5rem;
     }
-}
     .formHeader {
         font-size: 1.5rem;
     }
+    .btn_small {
+        height: 1.5rem;
+        line-height: 1.4rem;
+        margin: 0.1rem 0.1rem;
+        padding: 0.1rem 0.2rem;
+        font-size: 0.8rem;
+    }
+}
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
