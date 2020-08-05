@@ -38,8 +38,16 @@ def add_npc():
 def insert_npc():
     npcs = mongo.db.NPC
     newNPCObject = request.form.to_dict()
-    newNPCObject["race"] = newNPCObject["race"].lower()
-    newNPCObject["class"] = newNPCObject["class"].lower()
+# if statements in place to catch missing key/value pairs in case
+#  no race and/or class has been selected in the dropdown lists.
+    if 'race' in newNPCObject.keys():
+        newNPCObject["race"] = newNPCObject["race"].lower()
+    else:
+        newNPCObject.update({'race': ""})
+    if 'class' in newNPCObject.keys():
+        newNPCObject["class"] = newNPCObject["class"].lower()
+    else:
+        newNPCObject.update({'class': ""})
     npcs.insert_one(newNPCObject)
     return redirect(url_for('get_npcs'))
 
