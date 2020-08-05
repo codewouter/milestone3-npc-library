@@ -4,8 +4,6 @@
     word-break: break-word;
 }
 
-
-
 /* adds texture image to all page through body tag */
 .backgroundTextureBody {
     background-image: url("../images/generalbackgroundtexture.jpg");
@@ -24,7 +22,7 @@
 
 /* Used to reduce with of forms and lists on wide viewscreens and slightly on small viewports, also see media query section */
 .variableFormContainer {
-    width: 95%;
+    width: 100%;
     margin: auto;
 }
 
@@ -78,6 +76,7 @@ nav ul a {
 	padding-bottom: 10px;
 }
 
+/* ----------- NPC List page classes ----------- */
 /* general styling of the header of the NPC list */
 .NPCListHeader {
     font-size: 0.9rem;
@@ -85,7 +84,6 @@ nav ul a {
     padding-bottom: 0.5rem;
 }
 
-/* ----------- NPC List page classes ----------- */
 /* general styling of the rows in the NPC list */
 .NPCListRow {
     font-size: 0.8rem;
@@ -101,6 +99,9 @@ nav ul a {
         font-size: 1.5rem;
     }
 }
+    .formHeader {
+        font-size: 1.5rem;
+    }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -114,11 +115,9 @@ nav ul a {
     h3 {
         font-size: 2.1rem;
     }
-    /* general styling of the header of the NPC list */
     .NPCListHeader {
         font-size: 1.1rem;
     }
-    /* general styling of the rows in the NPC list */
     .NPCListRow {
         font-size: 1.0rem;
     }
@@ -129,11 +128,9 @@ nav ul a {
     h3 {
         font-size: 2.3rem;
     }
-    /* general styling of the header of the NPC list */
     .NPCListHeader {
         font-size: 1.1rem;
     }
-    /* general styling of the rows in the NPC list */
     .NPCListRow {
         font-size: 1.0rem;
     }
@@ -142,11 +139,9 @@ nav ul a {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    /* general styling of the header of the NPC list */
     .NPCListHeader {
         font-size: 1.2rem;
     }
-    /* general styling of the rows in the NPC list */
     .NPCListRow {
         font-size: 1.1rem;
     }
