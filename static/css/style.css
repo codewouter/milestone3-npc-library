@@ -3,6 +3,15 @@
     word-break: break-word;
 }
 
+/* Set at same size as all other labels after they translate in size when they get input */
+
+.input-field>label {
+    font-size: 1.25rem;
+}
+
+.materializeSelectBoxLabel>label {
+    font-size: 1rem;
+}
 /* adds texture image to all page through body tag */
 .backgroundTextureBody {
     background-image: url("../images/generalbackgroundtexture.jpg");
@@ -12,7 +21,7 @@
 
 /* Used to reduce with of forms and lists on wide viewscreens and slightly on small viewports, also see media query section */
 .variableFormContainer {
-    width: 100%;
+    width: 95%;
     margin: auto;
 }
 
@@ -76,6 +85,11 @@ nav ul a {
 
 /* ----------- NPC List page classes ----------- */
 /* general styling of the header of the NPC list */
+.NPCListContainer {
+    width: 100%;
+    margin: auto;
+}
+
 .NPCListHeader {
     font-size: 0.9rem;
     border-bottom: 2px solid rgb(125, 159, 199);
@@ -185,7 +199,7 @@ nav ul a {
 
 /* used to reduce the width of content under the hero image on wide viewports */
 @media screen and (min-width: 992px) {
-    .variableFormContainer {
+    .variableFormContainer, .NPCListContainer {
         width: 60%;
     }
 }

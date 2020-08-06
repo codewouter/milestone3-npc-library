@@ -22,18 +22,18 @@
                         <!-- display input field for name -->
                         <div class="input-field col s10 blue-text text-darken-3">
                             <input value="{{ npc.name }}" id="npcOverviewName" name="npcOverviewName" type="text" class="validate black-text" required>
-                            <label class="grey-text text-darken-4" for="npcOverviewName">Name</label>
+                            <label class="grey-text text-darken-4 " for="npcOverviewName">Name</label>
                         </div>
                         <!-- display input field for level -->
                         <div class="input-field col s2">
                             <input value="{{ npc.level }}" id="npcOverviewLevel" name="npcOverviewLevel" type="number" min="1" class="validate black-text">
-                            <label class="grey-text text-darken-4" for="npcOverviewLevel">Level</label>
+                            <label class="grey-text text-darken-4 " for="npcOverviewLevel">Level</label>
                         </div>
                     </div>
                     <!-- New row for race and class -->
                     <div class="row">
                         <!-- Selectbox for race -->
-                        <div class="input-field col s6">
+                        <div class="materializeSelectBoxLabel input-field col s6">
                             <select id="race" name="npcOverviewRace">
                                 <option value="" disabled selected>Choose race</option>
                                 {% for race in races %}
@@ -44,10 +44,10 @@
                                     {% endif %}
                                 {% endfor %}
                             </select>
-                            <label>Race</label>
+                            <label class="grey-text text-darken-4">Race</label>
                         </div>
                        <!-- Selectbox for class -->
-                        <div class="input-field col s6">
+                        <div class="materializeSelectBoxLabel input-field col s6">
                             <select id="class" name="npcOverviewClass">
                                 <option value="" disabled selected>Choose class</option>
                                 {% for class in classes %}
@@ -58,7 +58,7 @@
                                     {% endif %}
                                 {% endfor %}
                             </select>
-                            <label>Class</label>
+                            <label class="grey-text text-darken-4">Class</label>
                         </div>
                     </div>
                     <!-- New row for strength/dexterity/constitution -->
