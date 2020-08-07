@@ -14,10 +14,11 @@ At this point I will focus this library on DnD 5th edition. This means the libra
 * Ability scores for Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
 * Description
 
+-------------- am i responive image ! ---------------------
 
 ## UX
 
-User stories:
+### User stories:
 
 * As a user I want to be able to view this site on my computer, mobile and tablet.
 * As a user I want to see an overview of all NPC's in the database
@@ -28,6 +29,8 @@ User stories:
 * As a user I want to be able to add classes to choose from.
 * As a user I want to be able to add races to choose from.
 * As a user who plays DnD I want to see statistics appropriate for the DnD Realm.
+
+### Planned UX elements
 
 To adhere to all needs of the user the following UI elements are essential to create:
 * A landing page where the site is described and explained
@@ -40,6 +43,8 @@ To adhere to all needs of the user the following UI elements are essential to cr
 * A list of classes with an option to remove or add a class.
 * Some theme/image to make it abundantly clear that this is a fantasy/DnD setting.
 
+### Database setup
+
 A Mongo database will be used to store all data. Three collections will be needed:
 * A collection of NPC's with all statistics.
 * A collection of races.
@@ -47,7 +52,8 @@ A Mongo database will be used to store all data. Three collections will be neede
 
 The races and classes will be used repeatedly, therefor they have their own collection which can be added to, edited and deleted. This also makes it possible to have a dropdown box to select a class or race in the NPC form.
 
-The layout of the site will be:
+### Planned pages of the website
+
 * Home: A landing page with the navbar, hero image and welcome/explanation of the site.
 * NPC list: A page with the list of NPC's with the main statistics name, level, race and class. Within this list a character can be selected which leads to the full overview of the NPC. Also on this page should be a button which leads to the create NPC page.
 * NPC details: A page with the full overview of the character. Here two buttons should be present. One to delete the character (with an confirmation option) and one to edit the character which leads to the edit NPC page.
@@ -56,7 +62,7 @@ The layout of the site will be:
 * Races: A page where all races are listed that can be chosen. Here buttons should be present for every entry to edit or delete. Also a button to create a new race.
 * Classes: Like the Races page, but for classes.
 
-Other
+### Other
 
 * The navbar will have quicklinks to Home, NPC List, Races and Classes.
 * Races and classes will be capitalized, the NPC name will not be, since that is all up to the user and it becomes a matter of taste. Should it be 'Duke Duvel of Moortgat' or Duke Duvel Of Moortgat', etc.
@@ -64,30 +70,74 @@ Other
 
 ### Mockups
 
-Mockups/wireframes can be viewed within the project structure in /mockups/ms3mockups.pdf or in the [github repository](????????????)
+Mockups/wireframes can be viewed within the project structure in /mockups/ms3mockups.pdf or in the [github repository ADDLINK!](????????????)
 
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+**Existing features as developed from the list in the UX section**
+    
+1. A landing page where the site is described and explained
+    - A simple welcome text explaining the site's purposes
+2. A navigation bar for clear navigation across the site
+    - The navigation bar has been created with links to all the implemented pages. For small devices the navbar is collapsed in a hamburgericons which, when clicked, opens a slide-in menu.
+3. An overview (list) of all NPC's in the database.
+    - The NPC list contains the four basic properties of the NPC; name, level, race and class. Each entry has a 'view' button which will lead to the extended NPC overview.
+4. A button to add, edit or delete a character.
+    - Add: See entry 5.
+    - Edit & delete: See entry 6.
+  
+5. A form where a new character can be entered.
+    - A new NPC can be created from the navbarlink (create NPC) and by clicking the 'new' button in the header of the NPC List. When the form is filled out the confirm button can be clicked to add the NPC to the database. Pressing the 'x' button, cancels the edit form and returns to the overview of the relevant NPC.
+6. A form where an existing character is displayed and can be adjusted.
+    - When an NPC is selected from the list using the 'view' button, the full overview of the relevant NPC is opened with two buttons in the header 'Edit' and 'Del'. When the first is pressed, the overview form becomes editable. Pressing the 'Del' button will prompt the user for confirmation, and if agreed, will delete the NPC from the database.
+7. A list of races with an option to remove or add a race.
+    - A link to the list of created races can be found in the navbar. When an entry is clicked, the description will be openened along with an edit or delete button. To create a new race, the user can press the new button. 
+8. A list of classes with an option to remove or add a class.
+    - A link to the list of created classes can be found in the navbar. When an entry is clicked, the description will be openened along with an edit or delete button. To create a new class, the user can press the new button. 
+9. Some theme/image to make it abundantly clear that this is a fantasy/DnD setting.
+    - On all pages a hero image is present which makes it abundantly clear. The background texture is reminiscent of old paper to add to the look and feel. I purposfully left the hero image on big viewport because of the somewhat 'smudged' look because it's a bit lowres. However, I liked it.
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+### Additional features
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+* When an action is called to delete an entry (NPC, race, class) a modal will popup to ask for confirmation.
+* All lists will be sorted alphabetically.
+* Only a name is mandatory to create an NPC. This is to ensure that everything a user is thinking up can be entered, without being forced to add in unnecessary values. Sometimes an awesome name is the only thing needed to store.
+* As mentioned earlier. The character's name will not be capitalized on display, nor will it be set in all lowercase when entered in the database. This is to ensure the name stays intact. From my campaigning days I remember several characters with all kinds of upper- and lowercase combinations. (eg. d'Torrax the Magnificent).
+* When a wordbreak is necessary, it will be broken at a space whenever possible.
 
 ### Features Left to Implement
-- Another feature idea
+* More statistics (the DnD charactersheet is huge)
+* Option to add a picture of your NPC.
+* Race/class stat modifiers which will be applied automatically.
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+* HTML/CSS
+    * Mandatory.
+
+* [Materialize](https://materializecss.com/)
+    * The frontend of the site has been created making heavy use of materialize.
+
+* [Googlefonts](https://fonts.google.com/) 
+    * Googlefonts is being used through Materialize.
+
+* [Balsamiq](https://balsamiq.com/)
+    * The mockup wireframes were made using Balsamiq.
+
+* Validators:
+    * [HTML](https://validator.w3.org/)
+    * [CSS](https://www.w3schools.com/w3css/w3css_validation.asp)
 
 - [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+    - Some Jquery is used by materialize.
+
+- [AmIresponsive](http://ami.responsivedesign.is/#)
+    - Used to create Am I responsive picture.
+
+- [Color Picker](https://imagecolorpicker.com/)
+    - Used to detrmine gradient color for navbar, based of hero image.
 
 
 ## Testing
