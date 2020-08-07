@@ -6,7 +6,7 @@
 /* Set at same size as all other labels after they translate in size when they get input */
 
 .input-field>label {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 }
 
 .materializeSelectBoxLabel>label {
