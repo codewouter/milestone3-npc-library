@@ -35,7 +35,12 @@
                         <!-- Selectbox for race -->
                         <div class="materializeSelectBoxLabel input-field col s6">
                             <select id="race" name="npcOverviewRace">
+                                <!-- only when there is no race selected, the default value needs to be 'Choose race', if the code below is not present, it will default to the first valid entry in the list of races. Many thanks to Tim_ci of the Code institute for this solution. -->
+                                {% if not npc.race %}
                                 <option value="" disabled selected>Choose race</option>
+                                {% else %}
+                                <option value="" disabled >Choose race</option>
+                                {% endif %}
                                 {% for race in races %}
                                     {% if race.race == npc.race%}
                                     <option value="{{race.race}}" selected >{{race.race.capitalize()}}</option>
@@ -49,12 +54,17 @@
                        <!-- Selectbox for class -->
                         <div class="materializeSelectBoxLabel input-field col s6">
                             <select id="class" name="npcOverviewClass">
-                                <option value="" disabled selected>Choose class</option>
+                                 <!-- only when there is no class selected, the default value needs to be 'Choose class', if the code below is not present, it will default to the first valid entry in the list of classes. Many thanks to Tim_ci of the Code institute for this solution. -->                             
+                                {% if not npc.class%}
+                                    <option value="" disabled selected>Choose class</option>
+                                {% else %}
+                                    <option value="" disabled >Choose class</option>
+                                {% endif %}
                                 {% for class in classes %}
                                     {% if class.class == npc.class%}
-                                    <option value="{{class.class}}" selected >{{class.class.capitalize()}}</option>
+                                        <option value="{{class.class}}" selected >{{class.class.capitalize()}}</option>
                                     {% else %}
-                                    <option value="{{class.class}}">{{class.class.capitalize()}}</option>
+                                        <option value="{{class.class}}">{{class.class.capitalize()}}</option>
                                     {% endif %}
                                 {% endfor %}
                             </select>
