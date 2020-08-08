@@ -144,24 +144,41 @@ Mockups/wireframes can be viewed within the project structure in /mockups/ms3moc
 ## Testing
 
 ### Validation
-* The HTML validator returned a lot of errors concerning the jinja elements (eg. Error: Bad value {{ url_for('welcome') }})). These are ignored as they concern Jinja code which is functioning as intended.
+* The HTML validator returned no more errors after debugging and code cleaning. All pages and subpages were loaded and ran through the validator using their URL's.
 * The CSS validator returned no errors.
+* The Python (PEP8) validator returned no errors after cleaning up the code.
 
+### Test run according to the user stories:
 
+* As a user I want to be able to view this site on my computer, mobile and tablet.
+    * All responsiveness was tested using either chrome's devtools or a real device, tested for:
+        * Full desktop (real) at 1920x1080
+        * Laptop (real) at 1366x768
+        * Samsung Galaxy A5 (real) at 1080x1920 and 1920x1080
+        * Samsung Galaxy A5 (simulated) at 360x640 and 640x360
+        * Ipad (simulated) at 768x1024 and 1024x168
+        * General responsiveness using the sliders of Chrome's Devtool.
+    * For these tests, characters were created with excessive long or short entries and/or empty fields.
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+* As a user I want to see an overview of all NPC's in the database
+    * The user can use the navigation menu/bar to got to the NPC List where a condensed list is shown with all entries from the database. Per entry the name, level, race and class are shown, if present.
+* As a user I want to be able to see all the statistics of an NPC in one overview.
+    * The user can select the view button in each entry of the NPC list to navigate to the extended overview of the selected NPC, all values are shown in a clear and comprehensive manner.
+* As a user I want to be able to create and add a new NPC
+    * From the NPC list through the 'new' button or by selecting 'Create new NPC' from the navbar, the user is taking to the 'New character' form. Here all values can be entered. When the user is satisfied, the form can be submitted through a button, or canceled if necessary.
+* As a user I want to be able to edit an existing NPC
+    * When a character overview is open concerning a specific NPC, the 'edit' button can be pressed and a form is shown with all data previously entered, ready to be edited. Again a confirm and cancel button is present. 
+* As a user I want to be able to delete an existing NPC
+    * When a character overview is open concerning a specific NPC, the 'del' button can be pressed and a confirmation dialog will pop up to ask for confirmation. 
+* As a user I want to be able to add classes to choose from.
+    * Through the menu option 'classes' the user can see all classes present in the database. A 'new' button is present to create a new class. Also, all entries can be easily edited or deleted.
+* As a user I want to be able to add races to choose from.
+    * Through the menu option 'races' the user can see all races present in the database. A 'new' button is present to create a new race. Also, all entries can be easily edited or deleted.
+* As a user who plays DnD I want to see statistics appropriate for the DnD Realm.
+    * When the users view an NPC they will see only see statistics that adhere to the Dungeon and Dragons Fifth edition rulebook.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+### Further testing
+* 
 
 You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
