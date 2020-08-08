@@ -2,6 +2,8 @@
 
 # Milestone 3 - Dungeons and Dragons NPC Library
 
+![NPCLibrary](/static/images/responivetext.jpg)
+
 The milestone 3 project will be a webpage to showcase content I learned to develop in the third part of the Code Institute's Full stack developer bootcamp. It will be a basic full stack site using HTML/CSS (leaning heavily on Materialize) and especially python, the flask framework and MongoDB. The idea of an NPC library popped into my head whilst thinking about the upcoming vacation where I intend to play some oldschool tabletop DnD.
 
 DnD is short for Dungeons and Dragons and it comprises of a game where a party goes on big adventures. More on this on the [wiki](https://en.wikipedia.org/wiki/Dungeons_%26_Dragons_). These adventures play out mostly in the imagination of the players and especially the story leader called the Dungeon Master. The latter will use a premade adventure but sometimes think it all up him (or her)self). In the fantasy world a lot of non player characters reside, these are the NPS's (which is of course short for Non Player Character). It is hard to keep track of all these entities, so that's where this website comes in. A place where to add, edit, update and if necessary delete non player characters of the world. This way the information can be accessed anyplace anywhere as long as there is a browser and an internet connection!
@@ -54,13 +56,20 @@ The races and classes will be used repeatedly, therefor they have their own coll
 
 ### Planned pages of the website
 
-* Home: A landing page with the navbar, hero image and welcome/explanation of the site.
-* NPC list: A page with the list of NPC's with the main statistics name, level, race and class. Within this list a character can be selected which leads to the full overview of the NPC. Also on this page should be a button which leads to the create NPC page.
-* NPC details: A page with the full overview of the character. Here two buttons should be present. One to delete the character (with an confirmation option) and one to edit the character which leads to the edit NPC page.
-* Create NPC: A page to create a new NPC. This will be a form with the same layout as the NPC details page.
-* Edit NPC: A page where all statistics can be altered and saved. This will be a form with the same layout as the NPC details page, with all known values displayed.
-* Races: A page where all races are listed that can be chosen. Here buttons should be present for every entry to edit or delete. Also a button to create a new race.
-* Classes: Like the Races page, but for classes.
+* Home:
+    * A landing page with the navbar, hero image and welcome/explanation of the site.
+* NPC list:
+    *  A page with the list of NPC's with the main statistics name, level, race and class. Within this list a character can be selected which leads to the full overview of the NPC. Also on this page should be a button which leads to the create NPC page.
+* NPC details:
+    *A page with the full overview of the character. Here two buttons should be present. One to delete the character (with an confirmation option) and one to edit the character which leads to the edit NPC page.
+* Create NPC:
+    * A page to create a new NPC. This will be a form with the same layout as the NPC details page.
+* Edit NPC:
+    * A page where all statistics can be altered and saved. This will be a form with the same layout as the NPC details page, with all known values displayed.
+* Races:
+    * A page where all races are listed that can be chosen. Here buttons should be present for every entry to edit or delete. Also a button to create a new race.
+* Classes:
+    * Like the Races page, but for classes.
 
 ### Other
 
