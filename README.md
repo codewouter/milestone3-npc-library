@@ -2,7 +2,7 @@
 
 # Milestone 3 - Dungeons and Dragons NPC Library
 
-![NPCLibrary](/static/images/responivetext.jpg)
+![NPCLibrary](/static/images/responsivetext.jpg)
 
 The milestone 3 project will be a webpage to showcase content I learned to develop in the third part of the Code Institute's Full stack developer bootcamp. It will be a basic full stack site using HTML/CSS (leaning heavily on Materialize) and especially python, the flask framework and MongoDB. The idea of an NPC library popped into my head whilst thinking about the upcoming vacation where I intend to play some oldschool tabletop DnD.
 
