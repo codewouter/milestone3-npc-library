@@ -70,7 +70,7 @@ The races and classes will be used repeatedly, therefor they have their own coll
 
 ### Mockups
 
-Mockups/wireframes can be viewed within the project structure in /mockups/ms3mockups.pdf or in the [github repository ADDLINK!](????????????)
+Mockups/wireframes can be viewed within the project structure in /mockups/ms3mockups.pdf or in the [github repository](https://github.com/codewouter/milestone3-npc-library/blob/master/Mockups/ms3mockups.pdf)
 
 
 ## Features
@@ -87,7 +87,6 @@ Mockups/wireframes can be viewed within the project structure in /mockups/ms3moc
 4. A button to add, edit or delete a character.
     - Add: See entry 5.
     - Edit & delete: See entry 6.
-  
 5. A form where a new character can be entered.
     - A new NPC can be created from the navbarlink (create NPC) and by clicking the 'new' button in the header of the NPC List. When the form is filled out the confirm button can be clicked to add the NPC to the database. Pressing the 'x' button, cancels the edit form and returns to the overview of the relevant NPC.
 6. A form where an existing character is displayed and can be adjusted.
@@ -178,11 +177,19 @@ Mockups/wireframes can be viewed within the project structure in /mockups/ms3moc
     * When the users view an NPC they will see only see statistics that adhere to the Dungeon and Dragons Fifth edition rulebook.
 
 ### Further testing
-* 
+* All links and buttons were tested exensively.
+* Tens of characters were created with awkward entries. Empty fields, extremely long names, high and low values. After lots of debug and test cycles, no more errors were found.
+* A friend with a lots coding and testing experienced stress-tested the whole project.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+### Interesting bugs/errors found and solved during development.
+* I branched off early to test if I could combine materialize with my own styling, also branched off to work on the editnpc.html and update_npc route because it seemed complex. After those I decided branches were not needed because I was working solo on this project.
+* The hero image got either too high (taking up more than the whole viewport) or too small (just a small strip), depending on the size I entered. Decided to solve this through media queries to size it for specific viewport sizes.
+* I had a lot of problems with the table I created to show the NPC List, especially text spilling out of the boundaries of the table. This pushed the who table beyond the width of the rest of the page. After consulting Slack, Eventyret_mentor advised me to drop the table altogether. Seeing I kept fiddling to get it right, I decided to rebuild the list using divs. In the end it was easier and much more controllable.
+* Problems arose when activating the delete (del) buttons for classes and races lists. The confirmation modal was build in each iteration.  As I build it with a static id through each iteration while building the list, it was not unique. After consulting tutor support, I used the ._id value from each MongoDB entry as an ID to ensure they are unique. Many thanks to Haley.
+* A very interesting problem was encountered when doing some intermediate testing on my phone. While everything worked fine on an simulated Galaxy A5, on my real device I could not make selections in every materialize select-lists (dropboxes). The touchscreen did not respond while selecting an entry in the list. Found a solution through google [here](https://github.com/Dogfalo/materialize/issues/4200).
+* Jinja threw a lot of error because it had to capitalize() or lower() non-existing object values. Because I chose to allow empty fields (except name) in the NPC object. The selectboxes for class and race cannot be given a default value like other input-fields. When these fields are left empty, no key-value pair is created in the object. When the object is extracted from the database and entered into a page, the capitalize() method is used. When storing the class and race entries, the lower() method is used. To solve this I created if statements in the relevant functions to create an empty string in case one of the keys did not exist.
+* The last big issue was encountered when using the HTML validator which gave two errors that in the input-field for both class and race, two values were selected. This was because of a default (disabled) selection of 'choose race/class' and when present the selection from the NPCObject itself. This was eventually solved after much trial and error and a lot of help from Tim_ci. The default selection of value 'create race'/'create class', is only present when there is no value for race/class in the NPCObject. This is coded through jinja if statements on the editnpc.html page.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Deployment
 
