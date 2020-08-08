@@ -1,14 +1,16 @@
 /* ----------- general classes ----------- */
+/* When text is out of box on forms it should break at spaces and if that is not possible at the relevant character */
 .wordBreak {
-    word-break: break-word;
+    overflow-wrap: break-word;;
 }
 
-/* Set at same size as all other labels after they translate in size when they get input */
-
+/* Used to slightly increase font-size of labels of input fields */
 .input-field>label {
     font-size: 1.2rem;
 }
 
+/* Set class/race label in forms at same size as all other labels after they translate in size when they get input.
+Necessary since the class/race label do not translate in materialize (selectboxes) */
 .materializeSelectBoxLabel>label {
     font-size: 1rem;
 }
@@ -19,7 +21,7 @@
     background-size: cover;
 }
 
-/* Used to reduce with of forms and lists on wide viewscreens and slightly on small viewports, also see media query section */
+/* Used to reduce width of forms and lists on wide viewscreens and slightly on small viewports, also see media query section */
 .variableFormContainer {
     width: 95%;
     margin: auto;
@@ -31,6 +33,7 @@
     font-size: 1.7rem;
 }
 
+/* Class to increase size of confirm/cancel buttons since they have smaller content */
 .buttonConfirmCancel {
     height: 2.0rem;
     line-height: 1.9rem;

@@ -129,6 +129,7 @@ Mockups/wireframes can be viewed within the project structure in /mockups/ms3moc
 * Validators:
     * [HTML](https://validator.w3.org/)
     * [CSS](https://www.w3schools.com/w3css/w3css_validation.asp)
+    * [Python](http://pep8online.com/)
 
 - [JQuery](https://jquery.com)
     - Some Jquery is used by materialize.
@@ -145,8 +146,6 @@ Mockups/wireframes can be viewed within the project structure in /mockups/ms3moc
 ### Validation
 * The HTML validator returned a lot of errors concerning the jinja elements (eg. Error: Bad value {{ url_for('welcome') }})). These are ignored as they concern Jinja code which is functioning as intended.
 * The CSS validator returned no errors.
-* The javascript validator returns only errors about undefined variables which are either JQuery selectors, or variables used within functions. The missing semicolons are at places where an embedded function ends.
-
 
 
 
