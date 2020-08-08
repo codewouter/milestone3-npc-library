@@ -3,6 +3,11 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
+
+if os.path.exists("env.py"):
+    import env
+
+
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'NPCLibrary'
@@ -67,10 +72,21 @@ def edit_npc(npc_id):
 @app.route('/update_npc/<npc_id>', methods=["POST"])
 def update_npc(npc_id):
     npcs = mongo.db.NPC
+    newNPCObject = request.form.to_dict()
+# if statements in place to catch missing key/value pairs in case
+#  no race and/or class has been selected in the dropdown lists.
+    if 'npcOverviewRace' in newNPCObject.keys():
+        raceOfNPC = newNPCObject["npcOverviewRace"].lower()
+    else:
+        raceOfNPC = ""
+    if 'npcOverviewClass' in newNPCObject.keys():
+        classOfNPC = newNPCObject["npcOverviewClass"].lower()
+    else:
+        classOfNPC = ""
     npcs.update({'_id': ObjectId(npc_id)}, {
         'name': request.form.get('npcOverviewName'),
-        'race': request.form.get('npcOverviewRace').lower(),
-        'class': request.form.get('npcOverviewClass').lower(),
+        'race': raceOfNPC,
+        'class': classOfNPC,
         'level': request.form.get('npcOverviewLevel'),
         'strength': request.form.get('npcOverviewStrength'),
         'dexterity': request.form.get('npcOverviewDexterity'),

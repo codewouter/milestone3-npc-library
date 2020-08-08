@@ -142,6 +142,14 @@ Mockups/wireframes can be viewed within the project structure in /mockups/ms3moc
 
 ## Testing
 
+### Validation
+* The HTML validator returned a lot of errors concerning the jinja elements (eg. Error: Bad value {{ url_for('welcome') }})). These are ignored as they concern Jinja code which is functioning as intended.
+* The CSS validator returned no errors.
+* The javascript validator returns only errors about undefined variables which are either JQuery selectors, or variables used within functions. The missing semicolons are at places where an embedded function ends.
+
+
+
+
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
 Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
