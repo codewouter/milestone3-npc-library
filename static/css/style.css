@@ -1,5 +1,6 @@
 /* ----------- general classes ----------- */
 /* When text is out of box on forms it should break at spaces and if that is not possible at the relevant character */
+/* This solution was found at https://css-tricks.com/where-lines-break-is-complicated-heres-all-the-related-css-and-html/ */
 .wordBreak {
     overflow-wrap: break-word;;
 }
