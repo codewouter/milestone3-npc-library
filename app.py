@@ -12,6 +12,7 @@ app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'NPCLibrary'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
+app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
