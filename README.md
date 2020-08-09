@@ -16,8 +16,6 @@ At this point I will focus this library on DnD 5th edition. This means the libra
 * Ability scores for Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
 * Description
 
--------------- am i responive image ! ---------------------
-
 ## UX
 
 ### User stories:
@@ -201,6 +199,32 @@ Mockups/wireframes can be viewed within the project structure in /mockups/ms3moc
 
 
 ## Deployment
+
+The project is deployed via Heroku on the following URL:
+
+https://npc-library.herokuapp.com/
+
+To get the project deployed the following steps were taken:
+
+1. To prepare for deployement on Heroku, these steps were first taken:
+    1. Create the requirements file, via Gitpod CLI: `pip3 freeze --local > requirements.text`
+    2. Create the Procfile (capital P and no extension), via Gitpod CLI: `echo web: python app.py > Procfile` 
+
+2. Using git, the new files are commited. (git commit)
+3. Now a new app is created on Heroku:
+    1. Login (or first register an account) on Heroku
+    2. Within heroku a new app is created with name npc-library (at this moment there is a button in the top right corner called 'new')
+4. After the app was created I went to settings (within the app dashboard) and copied the Heroku Git URL (https://git.heroku.com/npc-library.git)
+5. Back in Gitpod I logged into Heroku using on the CLI `heroku login` and entered credentials.
+6. To add Heroku as a remote I entered in the CLI: `git remote add heroku https://git.heroku.com/npc-library.git` (the URL copied in step 4.)
+7. Now I pushed all content to Heroku using the CLI: `git push heroku master`
+8. Within the heroku app dashboard I clicked the button 'reveal config vars' and entered the following values:
+    1. IP: 0.0.0.0
+    2. PORT: 5000
+    3. MONGO_URI: (Here I entered the string to connect to the database, which I will not write down as it contains credentials)
+
+
+
 
 This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
 
