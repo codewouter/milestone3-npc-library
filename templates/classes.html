@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <section class="container-fluid variableFormContainer">
+    <!-- header for the list -->
     <div class="row formHeader">        
         <div class="col s9 m10">
             Classes
@@ -11,17 +12,23 @@
     </div>
     <div class="row">
         <div class="col s12">
+            <!-- This list is build using the collapsible list items of Materialize. Each iteration create a name and description along with buttons 'edit' and 'del' in the description field -->
             <ul class="collapsible">
                 {% for class in classes %}
                 <li>          
+                    <!-- name of the entry -->
                     <div class="collapsible-header collapsibleHeaderClasses orange lighten-5"><i class="material-icons">person</i><strong>{{ class.class.capitalize() }}</strong></div>
+                    <!-- description including buttons -->
                     <div class="collapsible-body">
                         <div class="row ">
+                            <!-- code for edit button -->
                             <div class="col s3 m2 xl1">
                                 <a href="{{ url_for('edit_class', class_id=class._id )}}" class="waves-effect waves-light btn btn_small blue-grey darken-3">Edit</a>
                             </div>
+                            <!-- code for del button -->
                             <div class="col s3 m2 xl1">
                                 <a data-target="{{ class._id }}" class="waves-effect waves-light btn btn_small blue-grey darken-3 modal-trigger">Del</a>
+                                <!-- underlying code sets up a confirmation modal to confirm if the entry can be deleted. Modal from materialize. -->
                                 <div id="{{ class._id }}" class="modal">
                                     <div class="modal-content">
                                         <h4>Please confirm</h4>

@@ -41,6 +41,7 @@
                                 {% else %}
                                 <option value="" disabled >Choose race</option>
                                 {% endif %}
+                                <!-- Building the list of races by iterating through the database's race collection. If a match with the current selected NPC's race is found, that one becomes the selected one. -->
                                 {% for race in races %}
                                     {% if race.race == npc.race%}
                                     <option value="{{race.race}}" selected >{{race.race.capitalize()}}</option>
@@ -60,6 +61,7 @@
                                 {% else %}
                                     <option value="" disabled >Choose class</option>
                                 {% endif %}
+                                <!-- Building the list of classes by iterating through the database's NPCClass collection. If a match with the current selected NPC's class is found, that one becomes the selected one. -->                           
                                 {% for class in classes %}
                                     {% if class.class == npc.class%}
                                         <option value="{{class.class}}" selected >{{class.class.capitalize()}}</option>
