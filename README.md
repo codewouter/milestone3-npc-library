@@ -200,7 +200,7 @@ Mockups/wireframes can be viewed within the project structure in /mockups/ms3moc
 
 ## Deployment
 
-The project is deployed via Heroku on the following URL:
+The project is deployed from the master branch via Heroku on the following URL:
 
 https://npc-library.herokuapp.com/
 
@@ -218,32 +218,89 @@ To get the project deployed the following steps were taken:
 5. Back in Gitpod I logged into Heroku using on the CLI `heroku login` and entered credentials.
 6. To add Heroku as a remote I entered in the CLI: `git remote add heroku https://git.heroku.com/npc-library.git` (the URL copied in step 4.)
 7. Now I pushed all content to Heroku using the CLI: `git push heroku master`
-8. Within the heroku app dashboard I clicked the button 'reveal config vars' and entered the following values:
+8. I started the Heroku proces with `heroku ps:scale web=1` also from the gitpod CLI.
+9. To get the connection string of the database, I logged into [MongoDB Atlas](https://account.mongodb.com/account/login). There I selected the cluster of the project and connected. Through the option 'connect your application' I got to the database connection string.
+10. Within the heroku app dashboard I clicked the button 'reveal config vars' and entered the following values:
     1. IP: 0.0.0.0
     2. PORT: 5000
-    3. MONGO_URI: (Here I entered the string to connect to the database, which I will not write down as it contains credentials)
+    3. MONGO_URI: Here is pasted the connection string gotten at 9 and edited the values 'password' and 'dbname' to match my own data.
+    4. SECRET_KEY: Added this as defined in my env.py file
+11. Lastly I went to the 'more' button and chose 'restart all dynos'
+12. Now through the 'open app' button I started the app
 
+### Local development
 
+To run this project locally, the following steps are needed.
 
+1. Clone or download this repository and load it into your IDE.
+2. The next steps are assuming you are using Gitpod.
+3. In the Gitpod CLI enter `pip3 install -r requirements.txt`, this will install all necessary files.
+4. To set the environment variables create an `env.py` file. To prevent this personal data to be pushed to github, put the file in your .gitignore file.
+5. Create your database in MongoDB Atlas. 
+6. In MongoDB Atlas, create a new database for the project. The following collections an values are needed.
+    1. A collection called 'NPC' with the following fields as string:
+        * name
+        * level
+        * race
+        * class
+        * strength
+        * dexterity
+        * constitution
+        * intelligence
+        * wisdom
+        * charisma
+        * description
+    2. A collection called 'race'with the following fields as string:
+        * race
+        * description
+    3. A collection called 'NPCCLass'with the following fields as string:
+        * class
+        * description
+        
+7. In the env.py file, add the following values
+```
+import os
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+os.environ["MONGO_URI"] = "mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority" 
+os.environ["SECRET_KEY"] = "<your own secret key>"
+```   
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+* In the connection string of MONGO_URI you need to replace the following values with your own database values:
+    * `<username>`
+    * `<password>`
+    * `<cluster_name>`
+    * `<database_name>`   
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+8. You can now run your version locally by starting it with the CLI command `python3 app.py`
 
 
 ## Credits
 
+**This project was based of the Code Institute's mini-project 'Task Manager'**
+
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- Texts for races and classes were taken from
+    https://www.dndbeyond.com/
 
 ### Media
-- The photos used in this site were obtained from ...
+* background.jpg
+    * https://forum.rpg.net/index.php?threads/dnd-5e-recruit-the-savage-lands.817780/
+
+* generalbackgroundtexture.jpg
+    * https://lostandtaken.com/downloads/seamless-background-textures/
+
+* dungeonfavicon.jpg
+    * https://www.flaticon.com/free-icons/dungeon
+
+* dndlogo.png
+    * https://toppng.com/d20-vector-dungeons-and-dragons-dungeons-dragons-PNG-free-PNG-Images_269003
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+
+- Thanks to my studybuddy on slack Supermario7
+- Thanks to my tester extraordinaire 'Jaws' for his usual annoying but so important bugspotting.
+- Thanks to Haley and an espcially big shoutout to Tim of Tutor Support, for helping me out with some nasty problems.
+- Thanks to the slack community in general, for study and personal related support.
+- Big shoutout to Igor_B_alumnus of the slack community for solving a lot of lesser and greater issues.
+- And as always, last but most important, my family for putting up with me. My wife for taking care of so many things, and the kids for just being kids.
