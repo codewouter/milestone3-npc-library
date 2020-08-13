@@ -59,7 +59,7 @@ The races and classes will be used repeatedly, therefor they have their own coll
 * NPC list:
     *  A page with the list of NPC's with the main statistics name, level, race and class. Within this list a character can be selected which leads to the full overview of the NPC. Also on this page should be a button which leads to the create NPC page.
 * NPC details:
-    *A page with the full overview of the character. Here two buttons should be present. One to delete the character (with an confirmation option) and one to edit the character which leads to the edit NPC page.
+    * A page with the full overview of the character. Here two buttons should be present. One to delete the character (with an confirmation option) and one to edit the character which leads to the edit NPC page.
 * Create NPC:
     * A page to create a new NPC. This will be a form with the same layout as the NPC details page.
 * Edit NPC:
@@ -77,7 +77,7 @@ The races and classes will be used repeatedly, therefor they have their own coll
 
 ### Mockups
 
-Mockups/wireframes can be viewed within the project structure in /mockups/ms3mockups.pdf or in the [github repository](https://github.com/codewouter/milestone3-npc-library/blob/master/Mockups/ms3mockups.pdf)
+Mockups/wireframes can be viewed within the project structure in /mockups/ms3mockups.pdf (once downloaded) or in the [github repository](https://github.com/codewouter/milestone3-npc-library/blob/master/Mockups/ms3mockups.pdf)
 
 
 ## Features
@@ -186,7 +186,7 @@ Mockups/wireframes can be viewed within the project structure in /mockups/ms3moc
 ### Further testing
 * All links and buttons were tested exensively.
 * Tens of characters were created with awkward entries. Empty fields, extremely long names, high and low values. After lots of debug and test cycles, no more errors were found.
-* A friend with a lots coding and testing experienced stress-tested the whole project.
+* A friend with a lot of coding and testing experienced stress-tested the whole project.
 
 ### Interesting bugs/errors found and solved during development.
 * I branched off early to test if I could combine materialize with my own styling, also branched off to work on the editnpc.html and update_npc route because it seemed complex. After those I decided branches were not needed because I was working solo on this project.
