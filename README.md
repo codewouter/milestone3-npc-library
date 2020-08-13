@@ -75,6 +75,15 @@ The races and classes will be used repeatedly, therefor they have their own coll
 * Races and classes will be capitalized, the NPC name will not be, since that is all up to the user and it becomes a matter of taste. Should it be 'Duke Duvel of Moortgat' or Duke Duvel Of Moortgat', etc.
 * During development I got the idea to use a form with locked input fields to display all statistics for a character. Then, when the edit button is pressed the form can be re-used with unlocked fields to edit where needed. This way the user will have a very easy time editing the form as the display is identical. The create character page can be copied the same way, but with empty fields (or placeholders). This ensures powerful consistency.
 
+### Note on naming convention
+
+I have chosen to use the following scheme for consistency and sadly had to make a concious choice to stray from the path.
+* All routes and function use an underscore as divider, the same goes for passing these variables to rendered pages. (eg. get_npc)
+* All filenames are lowercase and have no spaces or other fillers/dividers.
+* All names in HTML/CSS are camelcase.
+* Any other conventions are from Materialize.
+* NB: I ran into a problem from my database where I used 'class'as a name of a collection. In several functions in app.py I ran into the problem that 'class' was a reserved word, which I should have known. I was however so far al long with no time to spare (to do a completely renaming scheme of all entries of class) that I chose to rename the database collection to 'NPCClass'. Sadly this breaks the naming convention somewhat but I am aware of this.
+
 ### Mockups
 
 Mockups/wireframes can be viewed within the project structure in /mockups/ms3mockups.pdf (once downloaded) or in the [github repository](https://github.com/codewouter/milestone3-npc-library/blob/master/Mockups/ms3mockups.pdf)
